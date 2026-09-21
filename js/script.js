@@ -1,12 +1,10 @@
-javascript
 /* ==========================================================
    BROTHER & SISTER ALBUM
-   VERCEL READY JAVASCRIPT
 ========================================================== */
 
 
 /* ==========================================================
-   1. PHOTO DATA
+   PHOTO DATA
 ========================================================== */
 
 const photos = [
@@ -30,7 +28,7 @@ const captions = [
 
 
 /* ==========================================================
-   2. SETTINGS
+   SETTINGS
 ========================================================== */
 
 const PHOTO_DURATION = 6000;
@@ -39,7 +37,7 @@ const WELCOME_DELAY = 5000;
 
 
 /* ==========================================================
-   3. STATE
+   VARIABLES
 ========================================================== */
 
 let currentIndex = 0;
@@ -50,127 +48,135 @@ let progressTimer = null;
 
 let albumStarted = false;
 
-let imagesReady = false;
-
 
 /* ==========================================================
-   4. HTML ELEMENTS
+   ELEMENTS
 ========================================================== */
 
 const welcomeScreen =
-    document.getElementById("welcomeScreen");
+    document.getElementById(
+        "welcomeScreen"
+    );
 
 
 const albumScreen =
-    document.getElementById("albumScreen");
+    document.getElementById(
+        "albumScreen"
+    );
 
 
 const continueButton =
-    document.getElementById("continueButton");
+    document.getElementById(
+        "continueButton"
+    );
 
 
 const continueMessage =
-    document.getElementById("continueMessage");
+    document.getElementById(
+        "continueMessage"
+    );
 
 
 const albumImage =
-    document.getElementById("albumImage");
+    document.getElementById(
+        "albumImage"
+    );
 
 
 const imageLoader =
-    document.getElementById("imageLoader");
+    document.getElementById(
+        "imageLoader"
+    );
 
 
 const photoCaption =
-    document.getElementById("photoCaption");
+    document.getElementById(
+        "photoCaption"
+    );
 
 
 const photoCounter =
-    document.getElementById("photoCounter");
+    document.getElementById(
+        "photoCounter"
+    );
 
 
 const progressBar =
-    document.getElementById("progressBar");
+    document.getElementById(
+        "progressBar"
+    );
 
 
 const popup =
-    document.getElementById("popup");
+    document.getElementById(
+        "popup"
+    );
 
 
 const okButton =
-    document.getElementById("okButton");
+    document.getElementById(
+        "okButton"
+    );
 
 
 const finalScreen =
-    document.getElementById("finalScreen");
+    document.getElementById(
+        "finalScreen"
+    );
 
 
 const music =
-    document.getElementById("backgroundMusic");
+    document.getElementById(
+        "backgroundMusic"
+    );
 
 
 /* ==========================================================
-   5. PRELOAD ALL IMAGES
+   PRELOAD ALL PHOTOS
 ========================================================== */
 
 function preloadImages() {
 
-    const imagePromises =
-        photos.map(
-            (photoPath) => {
+    photos.forEach(
+        function (photoPath) {
 
-                return new Promise(
-                    (resolve) => {
-
-                        const image =
-                            new Image();
+            const image =
+                new Image();
 
 
-                        image.onload =
-                            resolve;
+            image.src =
+                photoPath;
 
 
-                        image.onerror =
-                            function () {
+            image.onload =
+                function () {
 
-                                console.error(
-                                    "Image could not load:",
-                                    photoPath
-                                );
+                    console.log(
+                        "Loaded:",
+                        photoPath
+                    );
 
-                                resolve();
-
-                            };
+                };
 
 
-                        image.src =
-                            photoPath;
+            image.onerror =
+                function () {
 
-                    }
-                );
+                    console.error(
+                        "Could not load:",
+                        photoPath
+                    );
 
-            }
-        );
+                };
 
-
-    Promise.all(imagePromises)
-        .then(
-            function () {
-
-                imagesReady = true;
-
-                console.log(
-                    "All images are ready."
-                );
-
-            }
-        );
+        }
+    );
 
 }
 
 
 /* ==========================================================
-   6. WAIT BEFORE SHOWING CONTINUE BUTTON
+   SHOW CONTINUE BUTTON AFTER 5 SECONDS
 ========================================================== */
 
 setTimeout(
@@ -190,7 +196,7 @@ setTimeout(
 
 
 /* ==========================================================
-   7. START ALBUM
+   START ALBUM
 ========================================================== */
 
 function startAlbum() {
@@ -203,49 +209,57 @@ function startAlbum() {
     albumStarted = true;
 
 
-    /* ------------------------------------------
-       Hide welcome screen
-    ------------------------------------------ */
+    /*
+       Hide welcome
+    */
 
     welcomeScreen.classList.add(
         "hidden"
     );
 
 
-    /* ------------------------------------------
-       Show album screen
-    ------------------------------------------ */
+    /*
+       Show album
+    */
 
     albumScreen.classList.remove(
         "hidden"
     );
 
 
-    /* ------------------------------------------
-       Start first image
-    ------------------------------------------ */
+    /*
+       First photo
+    */
 
     currentIndex = 0;
-
 
     showPhoto(
         currentIndex
     );
 
 
-    /* ------------------------------------------
+    /*
        Start music
-    ------------------------------------------ */
+    */
 
     music.currentTime = 0;
 
 
     music.play()
+        .then(
+            function () {
+
+                console.log(
+                    "Music started ❤️"
+                );
+
+            }
+        )
         .catch(
             function (error) {
 
                 console.log(
-                    "Audio autoplay issue:",
+                    "Music could not start:",
                     error
                 );
 
@@ -253,9 +267,9 @@ function startAlbum() {
         );
 
 
-    /* ------------------------------------------
+    /*
        Start slideshow
-    ------------------------------------------ */
+    */
 
     startSlideshow();
 
@@ -263,7 +277,7 @@ function startAlbum() {
 
 
 /* ==========================================================
-   8. SHOW PHOTO
+   SHOW PHOTO
 ========================================================== */
 
 function showPhoto(index) {
@@ -280,27 +294,40 @@ function showPhoto(index) {
         photos[index];
 
 
+    /*
+       Show loader
+    */
+
     imageLoader.classList.remove(
         "hide"
     );
 
+
+    /*
+       Fade current image
+    */
 
     albumImage.classList.add(
         "fade-out"
     );
 
 
-    const newImage =
+    /*
+       Create temporary image.
+       This prevents blank/half-loaded
+       images from appearing.
+    */
+
+    const nextImage =
         new Image();
 
 
-    newImage.onload =
+    nextImage.onload =
         function () {
 
             /*
-                Important:
-                Change src only after
-                the next image is fully loaded.
+               Set image only after
+               completely loaded.
             */
 
             albumImage.src =
@@ -319,14 +346,17 @@ function showPhoto(index) {
                 `${index + 1} / ${photos.length}`;
 
 
+            /*
+               Hide loader
+            */
+
             imageLoader.classList.add(
                 "hide"
             );
 
 
             /*
-                Small delay so browser
-                can render the new image.
+               Show new image
             */
 
             requestAnimationFrame(
@@ -342,29 +372,33 @@ function showPhoto(index) {
         };
 
 
-    newImage.onerror =
+    nextImage.onerror =
         function () {
 
             console.error(
-                "Unable to display:",
+                "Image failed:",
                 imagePath
             );
 
 
             imageLoader.textContent =
-                "Image not available 😔";
+                "Image could not load 😔";
 
         };
 
 
-    newImage.src =
+    /*
+       Start loading
+    */
+
+    nextImage.src =
         imagePath;
 
 }
 
 
 /* ==========================================================
-   9. START SLIDESHOW
+   START SLIDESHOW
 ========================================================== */
 
 function startSlideshow() {
@@ -389,7 +423,7 @@ function startSlideshow() {
 
 
 /* ==========================================================
-   10. NEXT PHOTO
+   NEXT PHOTO
 ========================================================== */
 
 function nextPhoto() {
@@ -398,8 +432,7 @@ function nextPhoto() {
 
 
     /*
-       If all photos are finished
-       show surprise popup.
+       All photos finished
     */
 
     if (
@@ -413,10 +446,18 @@ function nextPhoto() {
     }
 
 
+    /*
+       Show next photo
+    */
+
     showPhoto(
         currentIndex
     );
 
+
+    /*
+       Restart progress
+    */
 
     startProgress();
 
@@ -424,12 +465,14 @@ function nextPhoto() {
 
 
 /* ==========================================================
-   11. STOP SLIDESHOW
+   STOP SLIDESHOW
 ========================================================== */
 
 function stopSlideshow() {
 
-    if (slideshowTimer !== null) {
+    if (
+        slideshowTimer !== null
+    ) {
 
         clearInterval(
             slideshowTimer
@@ -440,7 +483,9 @@ function stopSlideshow() {
     }
 
 
-    if (progressTimer !== null) {
+    if (
+        progressTimer !== null
+    ) {
 
         clearInterval(
             progressTimer
@@ -454,12 +499,14 @@ function stopSlideshow() {
 
 
 /* ==========================================================
-   12. PROGRESS BAR
+   PROGRESS BAR
 ========================================================== */
 
 function startProgress() {
 
-    if (progressTimer !== null) {
+    if (
+        progressTimer !== null
+    ) {
 
         clearInterval(
             progressTimer
@@ -487,9 +534,10 @@ function startProgress() {
 
                 const percentage =
                     Math.min(
-                        (elapsed /
-                            PHOTO_DURATION) *
-                            100,
+                        (
+                            elapsed /
+                            PHOTO_DURATION
+                        ) * 100,
                         100
                     );
 
@@ -516,7 +564,7 @@ function startProgress() {
 
 
 /* ==========================================================
-   13. FINISH ALBUM
+   FINISH ALBUM
 ========================================================== */
 
 function finishAlbum() {
@@ -525,8 +573,8 @@ function finishAlbum() {
 
 
     /*
-       Hide album.
-       Music is NOT stopped.
+       Hide album only.
+       DO NOT stop music.
     */
 
     albumScreen.classList.add(
@@ -535,7 +583,7 @@ function finishAlbum() {
 
 
     /*
-       Wait a little before popup.
+       Show popup
     */
 
     setTimeout(
@@ -546,14 +594,14 @@ function finishAlbum() {
             );
 
         },
-        700
+        800
     );
 
 }
 
 
 /* ==========================================================
-   14. OPEN FINAL SURPRISE
+   FINAL SURPRISE
 ========================================================== */
 
 function openFinalSurprise() {
@@ -574,12 +622,12 @@ function openFinalSurprise() {
 
 
 /* ==========================================================
-   15. FLOATING HEARTS
+   FLOATING HEARTS
 ========================================================== */
 
 function createHearts() {
 
-    const heartList = [
+    const hearts = [
         "❤️",
         "💕",
         "💖",
@@ -602,10 +650,10 @@ function createHearts() {
 
 
         heart.textContent =
-            heartList[
+            hearts[
                 Math.floor(
                     Math.random() *
-                    heartList.length
+                    hearts.length
                 )
             ];
 
@@ -627,16 +675,15 @@ function createHearts() {
             "2100";
 
 
+        heart.style.pointerEvents =
+            "none";
+
+
         heart.style.fontSize =
             (
                 18 +
                 Math.random() * 18
-            ) +
-            "px";
-
-
-        heart.style.pointerEvents =
-            "none";
+            ) + "px";
 
 
         heart.style.animation =
@@ -668,20 +715,21 @@ function createHearts() {
 
 
 /* ==========================================================
-   16. HEART ANIMATION
+   HEART ANIMATION
 ========================================================== */
 
-const heartStyle =
+const heartAnimation =
     document.createElement(
         "style"
     );
 
 
-heartStyle.textContent = `
+heartAnimation.textContent = `
 
     @keyframes floatingHeart {
 
         0% {
+
             transform:
                 translateY(0)
                 scale(0.8);
@@ -689,16 +737,22 @@ heartStyle.textContent = `
             opacity: 0;
         }
 
+
         20% {
+
             opacity: 1;
+
         }
 
+
         100% {
+
             transform:
                 translateY(-110vh)
                 scale(1.2);
 
             opacity: 0;
+
         }
 
     }
@@ -707,12 +761,12 @@ heartStyle.textContent = `
 
 
 document.head.appendChild(
-    heartStyle
+    heartAnimation
 );
 
 
 /* ==========================================================
-   17. BUTTON EVENTS
+   BUTTON EVENTS
 ========================================================== */
 
 continueButton.addEventListener(
@@ -728,16 +782,12 @@ okButton.addEventListener(
 
 
 /* ==========================================================
-   18. MUSIC LOOP
+   SONG LOOP
 ========================================================== */
 
 music.addEventListener(
     "ended",
     function () {
-
-        /*
-           Restart song automatically.
-        */
 
         music.currentTime = 0;
 
@@ -758,13 +808,12 @@ music.addEventListener(
 
 
 /* ==========================================================
-   19. INITIALIZE
+   INITIALIZE
 ========================================================== */
 
 preloadImages();
 
 
 console.log(
-    "Brother & Sister Album loaded successfully ❤️"
+    "Brother & Sister Album Ready ❤️"
 );
-

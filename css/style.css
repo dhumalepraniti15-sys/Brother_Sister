@@ -1,4 +1,3 @@
-css
 /* ==========================================================
    RESET
 ========================================================== */
@@ -11,7 +10,7 @@ css
 
 
 /* ==========================================================
-   BODY
+   HTML / BODY
 ========================================================== */
 
 html,
@@ -30,7 +29,14 @@ body {
         Helvetica,
         sans-serif;
 
-    overflow: hidden;
+    /*
+       IMPORTANT:
+       Do not use overflow:hidden here.
+       It was hiding the Continue button on mobile.
+    */
+
+    overflow-x: hidden;
+    overflow-y: auto;
 
     background:
         linear-gradient(
@@ -53,6 +59,7 @@ body {
 
 .screen {
     width: 100%;
+
     min-height: 100vh;
     min-height: 100dvh;
 
@@ -62,6 +69,8 @@ body {
     align-items: center;
 
     padding: 20px;
+
+    overflow-x: hidden;
 }
 
 
@@ -69,10 +78,21 @@ body {
    WELCOME SCREEN
 ========================================================== */
 
-#welcomeScreen {
+.welcome-screen {
     position: relative;
 
-    overflow: hidden;
+    /*
+       IMPORTANT:
+       Allow vertical scrolling if the
+       phone screen is small.
+    */
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    padding:
+        30px 20px 45px;
 }
 
 
@@ -83,15 +103,18 @@ body {
 
     width: min(92vw, 700px);
 
+    margin: auto;
+
     padding:
         clamp(25px, 5vw, 50px);
 
     text-align: center;
 
     background:
-        rgba(255, 255, 255, 0.78);
+        rgba(255, 255, 255, 0.82);
 
     backdrop-filter: blur(15px);
+
     -webkit-backdrop-filter: blur(15px);
 
     border-radius: 30px;
@@ -102,15 +125,24 @@ body {
 }
 
 
+/* ==========================================================
+   HEART
+========================================================== */
+
 .heart-icon {
     font-size:
         clamp(55px, 10vw, 85px);
 
     margin-bottom: 15px;
 
-    animation: heartbeat 1.5s infinite;
+    animation:
+        heartbeat 1.5s infinite;
 }
 
+
+/* ==========================================================
+   WELCOME TEXT
+========================================================== */
 
 .welcome-card h1 {
     color: #7b1e4b;
@@ -118,7 +150,9 @@ body {
     font-size:
         clamp(30px, 6vw, 50px);
 
-    margin-bottom: 10px;
+    line-height: 1.15;
+
+    margin-bottom: 12px;
 }
 
 
@@ -127,6 +161,8 @@ body {
 
     font-size:
         clamp(18px, 3vw, 25px);
+
+    line-height: 1.3;
 
     margin-bottom: 25px;
 }
@@ -147,23 +183,39 @@ body {
 .mini-hearts {
     font-size: 22px;
 
-    margin: 15px 0;
+    margin:
+        18px 0 10px;
 }
 
+
+/* ==========================================================
+   CONTINUE MESSAGE
+========================================================== */
 
 .continue-message {
     color: #7b1e4b !important;
 
-    font-size: 14px !important;
+    font-size: 15px !important;
+
+    line-height: 1.5 !important;
 
     margin-top: 20px;
+
+    margin-bottom: 15px !important;
 }
 
 
+/* ==========================================================
+   BUTTON
+========================================================== */
+
 .main-button {
+    display: inline-block;
+
     border: none;
 
-    padding: 14px 35px;
+    padding:
+        14px 35px;
 
     border-radius: 30px;
 
@@ -188,19 +240,21 @@ body {
 
 
 .main-button:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     background: #a83268;
 }
 
 
 .main-button:active {
-    transform: scale(0.96);
+    transform:
+        scale(0.96);
 }
 
 
 /* ==========================================================
-   FLOWERS
+   DECORATIVE FLOWERS
 ========================================================== */
 
 .decor {
@@ -213,7 +267,8 @@ body {
 
     pointer-events: none;
 
-    animation: floatDecoration 5s ease-in-out infinite;
+    animation:
+        floatDecoration 5s ease-in-out infinite;
 }
 
 
@@ -251,30 +306,37 @@ body {
    ALBUM SCREEN
 ========================================================== */
 
-#albumScreen {
+.album-screen {
     padding: 15px;
+
+    overflow-y: auto;
 }
 
 
 .album-card {
     width: min(94vw, 1000px);
 
-    height: min(92vh, 850px);
-    height: min(92dvh, 850px);
+    height:
+        min(92vh, 850px);
+
+    height:
+        min(92dvh, 850px);
 
     display: flex;
 
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     padding: 20px;
 
     background:
-        rgba(255, 255, 255, 0.72);
+        rgba(255, 255, 255, 0.75);
 
     backdrop-filter: blur(12px);
+
     -webkit-backdrop-filter: blur(12px);
 
     border-radius: 30px;
@@ -303,19 +365,26 @@ body {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     overflow: hidden;
 }
 
 
+/* ==========================================================
+   PHOTO
+========================================================== */
+
 .photo-wrapper img {
     display: block;
 
     width: auto;
+
     height: auto;
 
     max-width: 100%;
+
     max-height: 100%;
 
     object-fit: contain;
@@ -329,6 +398,8 @@ body {
         rgba(0, 0, 0, 0.3);
 
     user-select: none;
+
+    -webkit-user-drag: none;
 
     opacity: 1;
 
@@ -354,6 +425,7 @@ body {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     color: #7b1e4b;
@@ -377,7 +449,7 @@ body {
 
 
 /* ==========================================================
-   CAPTION
+   PHOTO CAPTION
 ========================================================== */
 
 .photo-caption {
@@ -389,6 +461,8 @@ body {
 
     font-size:
         clamp(18px, 3vw, 26px);
+
+    line-height: 1.3;
 }
 
 
@@ -429,7 +503,7 @@ body {
     background: #7b1e4b;
 
     transition:
-        width 0.2s linear;
+        width 0.1s linear;
 }
 
 
@@ -447,6 +521,7 @@ body {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     padding: 20px;
@@ -457,9 +532,11 @@ body {
 
 
 .popup-card {
-    width: min(92vw, 480px);
+    width:
+        min(92vw, 480px);
 
-    padding: 40px 25px;
+    padding:
+        40px 25px;
 
     text-align: center;
 
@@ -484,7 +561,8 @@ body {
 .popup-card h2 {
     color: #7b1e4b;
 
-    margin: 15px 0;
+    margin:
+        15px 0;
 }
 
 
@@ -511,6 +589,7 @@ body {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     padding: 20px;
@@ -528,7 +607,8 @@ body {
 
 
 .final-card {
-    width: min(92vw, 680px);
+    width:
+        min(92vw, 680px);
 
     padding:
         clamp(25px, 5vw, 50px);
@@ -550,7 +630,8 @@ body {
     font-size:
         clamp(60px, 12vw, 90px);
 
-    animation: heartbeat 1.3s infinite;
+    animation:
+        heartbeat 1.3s infinite;
 }
 
 
@@ -560,7 +641,10 @@ body {
     font-size:
         clamp(26px, 6vw, 42px);
 
-    margin: 15px 0 25px;
+    line-height: 1.2;
+
+    margin:
+        15px 0 25px;
 }
 
 
@@ -653,21 +737,115 @@ body {
 @media (max-width: 600px) {
 
     .screen {
-        padding: 12px;
+        padding:
+            15px 12px 35px;
+    }
+
+
+    /* ------------------------------------------
+       WELCOME
+    ------------------------------------------ */
+
+    .welcome-screen {
+        min-height: 100dvh;
+
+        justify-content: flex-start;
+
+        align-items: flex-start;
+
+        overflow-y: auto;
+
+        padding:
+            20px 12px 45px;
     }
 
 
     .welcome-card {
         width: 96vw;
 
-        padding: 25px 18px;
+        margin:
+            0 auto;
+
+        padding:
+            25px 18px;
 
         border-radius: 22px;
     }
 
 
+    .heart-icon {
+        font-size: 55px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .welcome-card h1 {
+        font-size: 32px;
+
+        line-height: 1.15;
+    }
+
+
+    .welcome-card h2 {
+        font-size: 20px;
+
+        margin-bottom: 20px;
+    }
+
+
     .welcome-card p {
-        line-height: 1.65;
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 15px;
+    }
+
+
+    .mini-hearts {
+        font-size: 19px;
+
+        margin: 15px 0;
+    }
+
+
+    .continue-message {
+        font-size: 14px !important;
+
+        margin-top: 18px;
+    }
+
+
+    .main-button {
+        padding:
+            13px 30px;
+
+        font-size: 16px;
+    }
+
+
+    /* ------------------------------------------
+       FLOWERS
+    ------------------------------------------ */
+
+    .decor {
+        font-size: 25px;
+    }
+
+
+    .flower-three,
+    .flower-four {
+        display: none;
+    }
+
+
+    /* ------------------------------------------
+       ALBUM
+    ------------------------------------------ */
+
+    .album-screen {
+        padding: 10px;
     }
 
 
@@ -690,6 +868,8 @@ body {
     .photo-wrapper img {
         max-width: 96%;
 
+        max-height: 100%;
+
         border-radius: 14px;
     }
 
@@ -703,11 +883,25 @@ body {
 
     .progress-container {
         width: 90%;
+
+        margin-top: 10px;
     }
 
 
-    .decor {
-        font-size: 25px;
+    /* ------------------------------------------
+       POPUP
+    ------------------------------------------ */
+
+    .popup-card {
+        width: 94vw;
+
+        padding:
+            30px 20px;
+    }
+
+
+    .gift {
+        font-size: 60px;
     }
 
 }
@@ -719,13 +913,22 @@ body {
 
 @media (max-width: 380px) {
 
+    .welcome-screen {
+        padding:
+            15px 10px 40px;
+    }
+
+
     .welcome-card {
-        padding: 20px 14px;
+        width: 96vw;
+
+        padding:
+            22px 14px;
     }
 
 
     .welcome-card h1 {
-        font-size: 27px;
+        font-size: 28px;
     }
 
 
@@ -736,11 +939,14 @@ body {
 
     .welcome-card p {
         font-size: 13px;
+
+        line-height: 1.6;
     }
 
 
     .main-button {
-        padding: 12px 27px;
+        padding:
+            12px 27px;
 
         font-size: 15px;
     }
@@ -749,7 +955,7 @@ body {
 
 
 /* ==========================================================
-   LANDSCAPE MOBILE
+   MOBILE LANDSCAPE
 ========================================================== */
 
 @media (
@@ -757,6 +963,64 @@ body {
 ) and (
     orientation: landscape
 ) {
+
+    .welcome-screen {
+        justify-content: flex-start;
+
+        align-items: center;
+
+        padding:
+            15px 20px 30px;
+    }
+
+
+    .welcome-card {
+        padding:
+            18px 25px;
+    }
+
+
+    .heart-icon {
+        font-size: 40px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .welcome-card h1 {
+        font-size: 25px;
+    }
+
+
+    .welcome-card h2 {
+        font-size: 16px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .welcome-card p {
+        font-size: 12px;
+
+        line-height: 1.45;
+
+        margin-bottom: 8px;
+    }
+
+
+    .mini-hearts {
+        margin: 7px 0;
+
+        font-size: 15px;
+    }
+
+
+    .continue-message {
+        margin-top: 8px;
+
+        margin-bottom: 8px !important;
+    }
+
 
     .album-card {
         height: 94dvh;
@@ -799,8 +1063,32 @@ body {
     max-width: 1024px
 ) {
 
+    .welcome-screen {
+        padding:
+            25px 20px 40px;
+    }
+
+
     .photo-wrapper {
         height: 68dvh;
+    }
+
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1200px) {
+
+    .welcome-card {
+        max-width: 750px;
+    }
+
+
+    .album-card {
+        max-width: 1100px;
     }
 
 }
@@ -817,12 +1105,15 @@ body {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-duration:
+            0.01ms !important;
 
-        transition-duration: 0.01ms !important;
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
     }
 
 }
-

@@ -3,10 +3,6 @@
 
 <head>
 
-    <!-- =====================================================
-         BASIC SETTINGS
-    ====================================================== -->
-
     <meta charset="UTF-8">
 
     <meta
@@ -16,15 +12,10 @@
 
     <meta
         name="theme-color"
-        content="#ffb6d5"
+        content="#ffd6e7"
     >
 
     <title>Brother & Sister Forever ❤️</title>
-
-
-    <!-- =====================================================
-         CSS
-    ====================================================== -->
 
     <link
         rel="stylesheet"
@@ -43,14 +34,18 @@
 
     <main
         id="welcomeScreen"
-        class="screen"
+        class="screen welcome-screen"
     >
+
+        <!-- Decorative flowers -->
 
         <div class="decor flower-one">🌸</div>
         <div class="decor flower-two">🌷</div>
         <div class="decor flower-three">🌺</div>
         <div class="decor flower-four">🌼</div>
 
+
+        <!-- Welcome Card -->
 
         <div class="welcome-card">
 
@@ -111,6 +106,7 @@
             <button
                 id="continueButton"
                 class="main-button hidden"
+                type="button"
             >
                 Continue ❤️
             </button>
@@ -127,13 +123,13 @@
 
     <main
         id="albumScreen"
-        class="screen hidden"
+        class="screen album-screen hidden"
     >
 
         <div class="album-card">
 
 
-            <!-- PHOTO AREA -->
+            <!-- PHOTO -->
 
             <div class="photo-wrapper">
 
@@ -143,6 +139,7 @@
                     alt="Brother and Sister Memory"
                     draggable="false"
                 >
+
 
                 <div
                     id="imageLoader"
@@ -181,7 +178,6 @@
 
             </div>
 
-
         </div>
 
     </main>
@@ -213,7 +209,7 @@
 
                 Our memories are not over yet...
 
-                <br>
+                <br><br>
 
                 Something special is waiting for you. 🥹❤️
 
@@ -223,6 +219,7 @@
             <button
                 id="okButton"
                 class="main-button"
+                type="button"
             >
                 OK ❤️
             </button>
@@ -234,7 +231,7 @@
 
 
     <!-- =====================================================
-         FINAL SURPRISE SCREEN
+         FINAL SURPRISE
     ====================================================== -->
 
     <main
@@ -314,13 +311,12 @@
 
 
     <!-- =====================================================
-         BACKGROUND MUSIC
+         MUSIC
     ====================================================== -->
 
     <audio
         id="backgroundMusic"
         preload="auto"
-        playsinline
     >
 
         <source
@@ -341,4 +337,3 @@
 </body>
 
 </html>
-
