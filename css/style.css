@@ -1,6 +1,6 @@
 /* =========================================================
-   BROTHER & SISTER ALBUM
-   MODERN INTERACTIVE VERCEL-READY CSS
+   BROTHER & SISTER MEMORY ALBUM
+   SCRAPBOOK + FLOWER GARDEN DESIGN
 ========================================================= */
 
 
@@ -14,13 +14,11 @@
     box-sizing: border-box;
 }
 
-
 html {
     width: 100%;
     min-height: 100%;
     scroll-behavior: smooth;
 }
-
 
 body {
     width: 100%;
@@ -30,21 +28,13 @@ body {
     font-family:
         "Segoe UI",
         Arial,
-        Helvetica,
         sans-serif;
 
-    color: #3c2630;
-
     overflow-x: hidden;
-    overflow-y: auto;
 
-    background:
-        linear-gradient(
-            135deg,
-            #fff7fa 0%,
-            #f8eff7 45%,
-            #fff7ec 100%
-        );
+    color: #4b2638;
+
+    background: #fff5f8;
 }
 
 
@@ -56,23 +46,19 @@ body {
     display: none !important;
 }
 
-
-button,
-img {
+button {
+    font-family: inherit;
+    cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
 
 
-button {
-    font-family: inherit;
-}
-
-
 /* =========================================================
-   COMMON SCREEN
+   WELCOME PAGE
 ========================================================= */
 
-.screen {
+.welcome-screen {
+
     position: relative;
 
     width: 100%;
@@ -84,233 +70,160 @@ button {
     justify-content: center;
     align-items: center;
 
-    padding: 25px;
+    padding: 30px;
 
     overflow: hidden;
-}
-
-
-/* =========================================================
-   WELCOME BACKGROUND
-========================================================= */
-
-.welcome-screen {
 
     background:
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(255, 182, 213, 0.35),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 90% 15%,
-            rgba(210, 190, 255, 0.30),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(255, 220, 170, 0.30),
-            transparent 35%
-        ),
 
         linear-gradient(
-            135deg,
-            #fff8fb,
-            #f7f0ff,
-            #fff9ef
-        );
+            rgba(255, 238, 245, 0.20),
+            rgba(255, 238, 245, 0.20)
+        ),
+
+        url("../photos/flower-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
 /* =========================================================
-   SOFT BACKGROUND BLOBS
+   WELCOME OVERLAY
 ========================================================= */
 
-.welcome-screen::before,
-.welcome-screen::after {
+.welcome-screen::before {
 
     content: "";
 
     position: absolute;
 
-    border-radius: 50%;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.55),
+            rgba(255,255,255,0.15),
+            rgba(255,255,255,0.45)
+        );
 
     pointer-events: none;
-
-    filter: blur(5px);
-
-    opacity: 0.55;
-}
-
-
-.welcome-screen::before {
-
-    width: 280px;
-    height: 280px;
-
-    top: -100px;
-    left: -100px;
-
-    background:
-        rgba(255, 139, 190, 0.30);
-}
-
-
-.welcome-screen::after {
-
-    width: 320px;
-    height: 320px;
-
-    right: -120px;
-    bottom: -120px;
-
-    background:
-        rgba(172, 145, 255, 0.28);
 }
 
 
 /* =========================================================
-   WELCOME CARD
+   WELCOME CONTENT
 ========================================================= */
 
 .welcome-card {
 
     position: relative;
 
-    z-index: 10;
+    z-index: 5;
 
-    width: min(92vw, 760px);
+    width: min(850px, 92vw);
 
     padding:
-        clamp(30px, 6vw, 65px);
+        clamp(25px, 5vw, 55px);
 
     text-align: center;
 
-    border-radius: 36px;
+    background:
+        rgba(255, 249, 251, 0.82);
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.9);
+        rgba(255,255,255,0.8);
 
-    background:
-        rgba(255, 255, 255, 0.72);
-
-    backdrop-filter:
-        blur(20px);
-
-    -webkit-backdrop-filter:
-        blur(20px);
+    border-radius: 10px;
 
     box-shadow:
-        0 25px 80px
-        rgba(102, 52, 76, 0.15),
+        0 20px 60px
+        rgba(70, 30, 45, 0.18);
 
-        inset 0 1px 0
-        rgba(255, 255, 255, 0.9);
+    backdrop-filter:
+        blur(5px);
 
-    animation:
-        cardAppear 0.8s ease both;
+    -webkit-backdrop-filter:
+        blur(5px);
 }
 
 
 /* =========================================================
-   TOP HEART
+   HEART ICON
 ========================================================= */
 
 .heart-icon {
 
-    width: 85px;
-    height: 85px;
+    font-size:
+        clamp(45px, 8vw, 70px);
 
-    margin:
-        0 auto 22px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe1ed,
-            #fff0f6
-        );
-
-    box-shadow:
-        0 12px 35px
-        rgba(209, 69, 124, 0.18);
-
-    font-size: 45px;
-
-    animation:
-        heartBeat 2s ease-in-out infinite;
+    margin-bottom: 10px;
 }
 
 
 /* =========================================================
-   TITLE
+   WELCOME TITLE
 ========================================================= */
 
 .welcome-card h1 {
 
-    color: #76264e;
+    color: #8e2454;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size:
-        clamp(34px, 7vw, 58px);
+        clamp(36px, 7vw, 65px);
 
-    font-weight: 800;
+    font-weight: 700;
 
-    letter-spacing: -1.5px;
+    line-height: 1.05;
 
-    line-height: 1.1;
-
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 
 .welcome-card h2 {
 
-    color: #b13b70;
+    color: #b13a6b;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size:
-        clamp(20px, 4vw, 30px);
-
-    font-weight: 700;
+        clamp(20px, 4vw, 31px);
 
     margin-bottom: 28px;
 }
 
 
 /* =========================================================
-   DESCRIPTION
+   WELCOME TEXT
 ========================================================= */
 
 .welcome-card p {
 
-    max-width: 620px;
-
-    margin:
-        0 auto 18px;
-
-    color: #62545b;
+    color: #5f4c55;
 
     font-size:
         clamp(15px, 2.5vw, 19px);
 
-    line-height: 1.85;
+    line-height: 1.8;
+
+    margin-bottom: 15px;
 }
 
 
 .welcome-card strong {
 
-    color: #79274f;
-
-    font-weight: 750;
+    color: #8e2454;
 }
 
 
@@ -321,14 +234,13 @@ button {
 .mini-hearts {
 
     margin:
-        25px 0 18px;
+        20px 0;
+
+    color: #b52e67;
 
     font-size: 25px;
 
-    letter-spacing: 7px;
-
-    animation:
-        gentleFloat 3s ease-in-out infinite;
+    letter-spacing: 8px;
 }
 
 
@@ -338,112 +250,64 @@ button {
 
 .continue-message {
 
-    color: #9c3564 !important;
+    color: #8e2454 !important;
 
     font-size:
         clamp(14px, 2.5vw, 17px) !important;
 
-    font-weight: 600;
-
-    margin-top: 18px !important;
+    margin-top: 20px !important;
 }
 
 
 /* =========================================================
-   BUTTON
+   CONTINUE BUTTON
 ========================================================= */
 
 .main-button {
 
     position: relative;
 
-    margin-top: 8px;
+    margin-top: 12px;
 
     padding:
-        15px 38px;
+        14px 40px;
 
-    border: none;
+    border: 0;
 
-    border-radius: 50px;
+    border-radius: 4px;
 
-    color: #ffffff;
+    color: white;
 
     background:
-        linear-gradient(
-            135deg,
-            #7d2852,
-            #bb4278
-        );
+        #9d2858;
 
     font-size: 17px;
 
     font-weight: 700;
 
-    letter-spacing: 0.2px;
-
-    cursor: pointer;
-
-    overflow: hidden;
-
     box-shadow:
-        0 12px 30px
-        rgba(125, 40, 82, 0.25);
+        0 8px 20px
+        rgba(120, 25, 70, 0.25);
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-.main-button::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 70%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.35),
-            transparent
-        );
-
-    transform:
-        skewX(-20deg);
-
-    transition:
-        left 0.6s ease;
+        transform 0.2s ease,
+        background 0.2s ease;
 }
 
 
 .main-button:hover {
 
+    background: #7e2048;
+
     transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 16px 38px
-        rgba(125, 40, 82, 0.32);
-}
-
-
-.main-button:hover::before {
-
-    left: 140%;
+        translateY(-2px);
 }
 
 
 .main-button:active {
 
     transform:
-        scale(0.96);
+        scale(0.97);
 }
 
 
@@ -455,77 +319,73 @@ button {
 
     position: absolute;
 
-    z-index: 2;
+    z-index: 3;
+
+    font-size:
+        clamp(30px, 5vw, 55px);
 
     pointer-events: none;
 
-    user-select: none;
-
-    font-size:
-        clamp(28px, 5vw, 52px);
-
     filter:
         drop-shadow(
-            0 5px 10px
-            rgba(80, 30, 50, 0.10)
+            0 5px 8px
+            rgba(0,0,0,0.12)
         );
-
-    animation:
-        flowerFloat 5s ease-in-out infinite;
 }
 
 
 .flower-one {
-
-    top: 8%;
-    left: 6%;
+    top: 5%;
+    left: 4%;
 }
 
 
 .flower-two {
-
-    top: 9%;
-    right: 6%;
-
-    animation-delay: 1.2s;
+    top: 7%;
+    right: 5%;
 }
 
 
 .flower-three {
-
-    bottom: 9%;
-    left: 7%;
-
-    animation-delay: 2s;
+    bottom: 7%;
+    left: 5%;
 }
 
 
 .flower-four {
-
-    bottom: 8%;
-    right: 7%;
-
-    animation-delay: 3s;
+    bottom: 5%;
+    right: 5%;
 }
 
 
 /* =========================================================
-   ALBUM SCREEN
+   ALBUM PAGE
 ========================================================= */
 
 .album-screen {
 
+    position: relative;
+
+    width: 100%;
+
     min-height: 100vh;
     min-height: 100dvh;
 
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
     padding:
-        25px;
+        35px 20px;
+
+    overflow-y: auto;
 
     background:
 
         linear-gradient(
-            rgba(255, 245, 249, 0.30),
-            rgba(255, 245, 249, 0.30)
+            rgba(55, 22, 32, 0.18),
+            rgba(55, 22, 32, 0.18)
         ),
 
         url("../photos/flower-background.jpg");
@@ -541,73 +401,48 @@ button {
 
 
 /* =========================================================
-   ALBUM CARD
+   REMOVE OLD CARD LOOK
 ========================================================= */
 
 .album-card {
 
-    position: relative;
+    width: min(1100px, 96vw);
 
-    width:
-        min(94vw, 1050px);
+    min-height: auto;
 
-    min-height:
-        min(90vh, 850px);
-
-    min-height:
-        min(90dvh, 850px);
-
-    padding:
-        clamp(18px, 3vw, 35px);
+    padding: 0;
 
     display: flex;
 
     flex-direction: column;
 
-    justify-content: center;
-
     align-items: center;
 
-    border-radius: 34px;
+    background: transparent;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.85);
+    border: none;
 
-    background:
-        rgba(255, 255, 255, 0.68);
+    border-radius: 0;
 
-    backdrop-filter:
-        blur(16px);
+    box-shadow: none;
 
-    -webkit-backdrop-filter:
-        blur(16px);
+    backdrop-filter: none;
 
-    box-shadow:
-
-        0 25px 80px
-        rgba(70, 30, 50, 0.22),
-
-        inset 0 1px 0
-        rgba(255,255,255,0.9);
+    -webkit-backdrop-filter: none;
 }
 
 
 /* =========================================================
-   PHOTO FRAME
+   PHOTO AREA
 ========================================================= */
 
 .photo-wrapper {
 
     position: relative;
 
-    width: 100%;
+    width: min(850px, 92vw);
 
-    height:
-        min(68vh, 610px);
-
-    height:
-        min(68dvh, 610px);
+    height: min(68vh, 650px);
 
     display: flex;
 
@@ -615,28 +450,27 @@ button {
 
     align-items: center;
 
-    padding: 15px;
-
-    border-radius: 28px;
+    padding: 18px;
 
     background:
+        #fffaf5;
 
-        linear-gradient(
-            rgba(255,255,255,0.35),
-            rgba(255,255,255,0.35)
-        ),
-
-        url("../photos/flower-background.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    overflow: hidden;
+    border:
+        10px solid
+        #fffaf5;
 
     box-shadow:
-        inset 0 0 0 1px
-        rgba(255,255,255,0.8);
+
+        0 25px 55px
+        rgba(30, 15, 20, 0.35),
+
+        0 0 0 1px
+        rgba(100,50,70,0.12);
+
+    transform:
+        rotate(-1deg);
+
+    overflow: hidden;
 }
 
 
@@ -652,66 +486,56 @@ button {
 
     height: auto;
 
-    max-width: 96%;
+    max-width: 100%;
 
-    max-height: 96%;
+    max-height: 100%;
 
     object-fit: contain;
 
-    border-radius: 18px;
+    background: #fff;
 
-    background: #ffffff;
+    border: none;
 
-    padding: 6px;
+    border-radius: 0;
 
-    box-shadow:
+    box-shadow: none;
 
-        0 18px 45px
-        rgba(40, 20, 30, 0.25);
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
 
     user-select: none;
 
     -webkit-user-drag: none;
-
-    /*
-       IMPORTANT:
-       NO SLIDE
-       NO FADE
-       NO ZOOM
-    */
-
-    opacity: 1;
-
-    transform: none;
-
-    transition: none;
-}
-
-
-/*
-   If old JS adds fade-out class,
-   still keep image completely stable.
-*/
-
-.photo-wrapper img.fade-out {
-
-    opacity: 1;
-
-    transform: none;
-
-    transition: none;
 }
 
 
 /* =========================================================
-   IMAGE LOADER
+   IMPORTANT
+   DISABLE OLD PHOTO ANIMATIONS
+========================================================= */
+
+.photo-wrapper img.fade-out {
+
+    opacity: 1 !important;
+
+    transform: none !important;
+
+    transition: none !important;
+}
+
+
+/* =========================================================
+   PHOTO LOADING
 ========================================================= */
 
 .image-loader {
 
     position: absolute;
 
-    inset: 15px;
+    inset: 18px;
 
     display: flex;
 
@@ -719,71 +543,124 @@ button {
 
     align-items: center;
 
-    border-radius: 22px;
-
-    color: #8a315a;
+    color: #8d3158;
 
     background:
-        rgba(255,255,255,0.80);
-
-    backdrop-filter:
-        blur(8px);
+        rgba(255,250,245,0.92);
 
     font-size: 17px;
 
-    font-weight: 700;
+    font-weight: 600;
 
-    z-index: 5;
+    z-index: 10;
 }
 
 
 .image-loader.hide {
-
     display: none;
 }
 
 
 /* =========================================================
-   CAPTION
+   PHOTO CAPTION
 ========================================================= */
 
 .photo-caption {
 
-    margin-top: 20px;
+    position: relative;
 
-    color: #79274f;
+    margin-top: 25px;
+
+    padding:
+        12px 25px;
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size:
-        clamp(19px, 3vw, 28px);
+        clamp(20px, 3vw, 29px);
 
-    font-weight: 750;
+    font-weight: 600;
 
     text-align: center;
 
-    line-height: 1.3;
-}
+    background:
+        #8d3158;
 
-
-.photo-counter {
-
-    margin-top: 7px;
-
-    color: #756870;
-
-    font-size: 14px;
-
-    font-weight: 600;
+    box-shadow:
+        0 8px 20px
+        rgba(50,20,30,0.20);
 }
 
 
 /* =========================================================
-   REMOVE PROGRESS BAR COMPLETELY
+   PHOTO NUMBER
+========================================================= */
+
+.photo-counter {
+
+    margin-top: 10px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 2px 5px
+        rgba(0,0,0,0.4);
+}
+
+
+/* =========================================================
+   REMOVE PROGRESS BAR
 ========================================================= */
 
 .progress-container,
 .progress-bar {
 
     display: none !important;
+}
+
+
+/* =========================================================
+   PHOTO DECORATIONS
+========================================================= */
+
+.album-screen::before {
+
+    content: "🌸";
+
+    position: absolute;
+
+    top: 30px;
+    left: 30px;
+
+    font-size: 50px;
+
+    opacity: 0.9;
+}
+
+
+.album-screen::after {
+
+    content: "🌷";
+
+    position: absolute;
+
+    right: 30px;
+    bottom: 30px;
+
+    font-size: 50px;
+
+    opacity: 0.9;
 }
 
 
@@ -808,45 +685,42 @@ button {
     padding: 20px;
 
     background:
-        rgba(40, 15, 30, 0.62);
-
-    backdrop-filter:
-        blur(7px);
-
-    -webkit-backdrop-filter:
-        blur(7px);
+        rgba(45,15,30,0.62);
 }
 
 
+/* =========================================================
+   POPUP CARD
+========================================================= */
+
 .popup-card {
 
-    position: relative;
-
     width:
-        min(92vw, 500px);
+        min(450px, 90vw);
 
     padding:
-        42px 28px;
+        40px 30px;
 
     text-align: center;
 
-    border-radius: 30px;
-
     background:
-        rgba(255,255,255,0.96);
+        #fffaf7;
+
+    border-radius: 3px;
 
     box-shadow:
-        0 25px 80px
+        0 25px 70px
         rgba(0,0,0,0.35);
 
-    animation:
-        popupAppear 0.5s ease both;
+    border-top:
+        5px solid
+        #a32f5d;
 }
 
 
 .gift {
 
-    font-size: 70px;
+    font-size: 65px;
 
     margin-bottom: 10px;
 }
@@ -854,10 +728,14 @@ button {
 
 .popup-card h2 {
 
-    color: #7b2852;
+    color: #8d3158;
+
+    font-family:
+        Georgia,
+        serif;
 
     font-size:
-        clamp(23px, 5vw, 32px);
+        clamp(24px, 5vw, 34px);
 
     margin-bottom: 15px;
 }
@@ -865,13 +743,13 @@ button {
 
 .popup-card p {
 
-    color: #5f555a;
+    color: #604f56;
 
     font-size: 16px;
 
-    line-height: 1.8;
+    line-height: 1.7;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 
@@ -893,15 +771,15 @@ button {
 
     align-items: center;
 
-    padding: 20px;
+    padding: 25px;
 
     overflow-y: auto;
 
     background:
 
         linear-gradient(
-            rgba(255, 231, 241, 0.72),
-            rgba(235, 225, 255, 0.72)
+            rgba(255,240,246,0.35),
+            rgba(255,240,246,0.35)
         ),
 
         url("../photos/flower-background.jpg");
@@ -914,53 +792,57 @@ button {
 }
 
 
+/* =========================================================
+   FINAL CONTENT
+========================================================= */
+
 .final-card {
 
     width:
-        min(92vw, 700px);
+        min(850px, 94vw);
 
     padding:
-        clamp(28px, 6vw, 55px);
+        clamp(30px, 6vw, 65px);
 
     text-align: center;
 
-    border-radius: 35px;
-
     background:
-        rgba(255,255,255,0.90);
+        rgba(255,250,247,0.88);
 
-    backdrop-filter:
-        blur(18px);
+    border-radius: 5px;
 
-    -webkit-backdrop-filter:
-        blur(18px);
+    border:
+        1px solid
+        rgba(255,255,255,0.8);
 
     box-shadow:
-        0 25px 90px
-        rgba(70,30,50,0.25);
+        0 25px 70px
+        rgba(70,30,45,0.25);
 }
 
 
 .big-heart {
 
     font-size:
-        clamp(60px, 12vw, 95px);
+        clamp(55px, 10vw, 90px);
 
     margin-bottom: 15px;
-
-    animation:
-        heartBeat 1.7s ease-in-out infinite;
 }
 
 
 .final-card h1 {
 
-    color: #76264e;
+    color: #84274f;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size:
-        clamp(28px, 6vw, 46px);
+        clamp(30px, 6vw, 52px);
 
-    line-height: 1.15;
+    line-height: 1.2;
 
     margin-bottom: 25px;
 }
@@ -968,14 +850,17 @@ button {
 
 .final-card p {
 
-    color: #554b50;
+    max-width: 650px;
+
+    margin:
+        0 auto 15px;
+
+    color: #584b51;
 
     font-size:
-        clamp(15px, 2.8vw, 19px);
+        clamp(15px, 2.5vw, 19px);
 
-    line-height: 1.85;
-
-    margin-bottom: 16px;
+    line-height: 1.8;
 }
 
 
@@ -983,133 +868,16 @@ button {
 
     margin-top: 28px;
 
-    color: #9b315f;
+    color: #a02e5c;
+
+    font-family:
+        Georgia,
+        serif;
 
     font-size:
-        clamp(20px, 4vw, 29px);
+        clamp(21px, 4vw, 30px);
 
-    font-weight: 800;
-}
-
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes cardAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(20px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-@keyframes heartBeat {
-
-    0%,
-    100% {
-
-        transform:
-            scale(1);
-    }
-
-    50% {
-
-        transform:
-            scale(1.08);
-    }
-}
-
-
-@keyframes flowerFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-    }
-
-    50% {
-
-        transform:
-            translateY(-12px)
-            rotate(5deg);
-    }
-}
-
-
-@keyframes gentleFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-    }
-
-    50% {
-
-        transform:
-            translateY(-5px);
-    }
-}
-
-
-@keyframes popupAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(0.88)
-            translateY(20px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-    }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (min-width: 601px) and (max-width: 1024px) {
-
-    .welcome-card {
-
-        width: 88vw;
-
-    }
-
-
-    .photo-wrapper {
-
-        height: 65dvh;
-
-    }
-
+    font-weight: bold;
 }
 
 
@@ -1120,26 +888,23 @@ button {
 @media (max-width: 600px) {
 
     .screen {
-
-        padding:
-            15px 10px 30px;
+        padding: 15px;
     }
 
 
-    /* -------------------------------------
+    /* -----------------------------------
        WELCOME
-    ------------------------------------- */
+    ----------------------------------- */
 
     .welcome-screen {
 
-        justify-content: flex-start;
+        padding:
+            20px 10px 35px;
 
         align-items: center;
 
-        padding:
-            20px 10px 40px;
-
-        overflow-y: auto;
+        background-attachment:
+            scroll;
     }
 
 
@@ -1148,28 +913,23 @@ button {
         width: 96vw;
 
         padding:
-            27px 18px;
+            28px 17px;
 
-        border-radius: 25px;
+        border-radius: 8px;
     }
 
 
     .heart-icon {
 
-        width: 68px;
-        height: 68px;
+        font-size: 48px;
 
-        font-size: 36px;
-
-        margin-bottom: 17px;
+        margin-bottom: 8px;
     }
 
 
     .welcome-card h1 {
 
         font-size: 31px;
-
-        letter-spacing: -0.8px;
     }
 
 
@@ -1194,28 +954,21 @@ button {
         font-size: 18px;
 
         letter-spacing: 3px;
-
-        margin:
-            18px 0 12px;
     }
 
 
     .main-button {
 
         padding:
-            13px 31px;
+            13px 30px;
 
         font-size: 16px;
     }
 
 
-    /* -------------------------------------
-       DECORATIONS
-    ------------------------------------- */
-
     .decor {
 
-        font-size: 25px;
+        font-size: 26px;
     }
 
 
@@ -1226,13 +979,16 @@ button {
     }
 
 
-    /* -------------------------------------
+    /* -----------------------------------
        ALBUM
-    ------------------------------------- */
+    ----------------------------------- */
 
     .album-screen {
 
-        padding: 10px;
+        min-height: 100dvh;
+
+        padding:
+            20px 10px;
 
         background-attachment:
             scroll;
@@ -1241,49 +997,43 @@ button {
 
     .album-card {
 
-        width: 97vw;
+        width: 100%;
 
-        min-height: 94dvh;
-
-        padding: 12px;
-
-        border-radius: 25px;
+        padding: 0;
     }
 
 
     .photo-wrapper {
 
-        height: 67dvh;
+        width: 94vw;
 
-        padding: 10px;
+        height: 65dvh;
 
-        border-radius: 20px;
+        min-height: 350px;
+
+        padding: 8px;
+
+        border-width: 7px;
+
+        transform:
+            rotate(-0.5deg);
     }
 
 
     .photo-wrapper img {
 
-        max-width: 95%;
+        max-width: 100%;
 
-        max-height: 95%;
-
-        padding: 4px;
-
-        border-radius: 14px;
-    }
-
-
-    .image-loader {
-
-        inset: 10px;
-
-        border-radius: 15px;
+        max-height: 100%;
     }
 
 
     .photo-caption {
 
-        margin-top: 13px;
+        margin-top: 18px;
+
+        padding:
+            10px 18px;
 
         font-size: 17px;
     }
@@ -1292,29 +1042,49 @@ button {
     .photo-counter {
 
         font-size: 12px;
-
-        margin-top: 5px;
     }
 
 
-    /* -------------------------------------
+    .album-screen::before {
+
+        top: 10px;
+        left: 10px;
+
+        font-size: 30px;
+    }
+
+
+    .album-screen::after {
+
+        right: 10px;
+        bottom: 10px;
+
+        font-size: 30px;
+    }
+
+
+    /* -----------------------------------
        POPUP
-    ------------------------------------- */
+    ----------------------------------- */
 
     .popup-card {
 
         width: 94vw;
 
         padding:
-            32px 20px;
-
-        border-radius: 25px;
+            30px 20px;
     }
 
 
     .gift {
 
-        font-size: 58px;
+        font-size: 55px;
+    }
+
+
+    .popup-card h2 {
+
+        font-size: 24px;
     }
 
 
@@ -1324,9 +1094,9 @@ button {
     }
 
 
-    /* -------------------------------------
+    /* -----------------------------------
        FINAL
-    ------------------------------------- */
+    ----------------------------------- */
 
     .final-screen {
 
@@ -1344,14 +1114,18 @@ button {
 
         padding:
             30px 18px;
+    }
 
-        border-radius: 26px;
+
+    .final-card h1 {
+
+        font-size: 31px;
     }
 
 
     .final-card p {
 
-        font-size: 15px;
+        font-size: 14px;
 
         line-height: 1.7;
     }
@@ -1360,39 +1134,37 @@ button {
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL PHONE
 ========================================================= */
 
 @media (max-width: 380px) {
 
-    .welcome-card {
-
-        padding:
-            23px 14px;
-    }
-
-
     .welcome-card h1 {
-
-        font-size: 28px;
+        font-size: 27px;
     }
 
 
     .welcome-card h2 {
-
         font-size: 17px;
     }
 
 
     .welcome-card p {
-
         font-size: 13px;
     }
 
 
     .photo-wrapper {
 
-        height: 64dvh;
+        height: 62dvh;
+
+        min-height: 300px;
+    }
+
+
+    .photo-caption {
+
+        font-size: 16px;
     }
 
 }
@@ -1411,33 +1183,28 @@ button {
     .welcome-screen {
 
         padding:
-            15px 20px 30px;
+            15px 25px;
     }
 
 
     .welcome-card {
 
         padding:
-            20px 30px;
+            18px 30px;
     }
 
 
     .heart-icon {
 
-        width: 50px;
-        height: 50px;
+        font-size: 35px;
 
-        font-size: 28px;
-
-        margin-bottom: 8px;
+        margin-bottom: 3px;
     }
 
 
     .welcome-card h1 {
 
         font-size: 25px;
-
-        margin-bottom: 8px;
     }
 
 
@@ -1445,7 +1212,7 @@ button {
 
         font-size: 16px;
 
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
 
@@ -1453,56 +1220,69 @@ button {
 
         font-size: 12px;
 
-        line-height: 1.45;
+        line-height: 1.4;
 
-        margin-bottom: 7px;
+        margin-bottom: 5px;
     }
 
 
     .mini-hearts {
 
-        margin: 6px 0;
+        margin: 5px 0;
 
         font-size: 15px;
-    }
-
-
-    .continue-message {
-
-        margin-top: 6px !important;
-
-        margin-bottom: 7px !important;
     }
 
 
     .main-button {
 
         padding:
-            10px 25px;
+            9px 25px;
 
         font-size: 14px;
     }
 
 
-    .album-card {
+    .album-screen {
 
-        min-height: 94dvh;
-
-        padding: 8px;
+        padding:
+            10px 20px;
     }
 
 
     .photo-wrapper {
 
-        height: 60dvh;
+        height: 70dvh;
+
+        min-height: 250px;
     }
 
 
     .photo-caption {
 
-        font-size: 15px;
+        margin-top: 7px;
 
-        margin-top: 5px;
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (
+    min-width: 601px
+) and (
+    max-width: 1024px
+) {
+
+    .photo-wrapper {
+
+        width: 90vw;
+
+        height: 65dvh;
     }
 
 }
@@ -1514,21 +1294,11 @@ button {
 
 @media (min-width: 1200px) {
 
-    .welcome-card {
-
-        max-width: 780px;
-    }
-
-
-    .album-card {
-
-        max-width: 1100px;
-    }
-
-
     .photo-wrapper {
 
-        height: 68vh;
+        width: 850px;
+
+        height: 650px;
     }
 
 }
@@ -1541,17 +1311,13 @@ button {
 @media (prefers-reduced-motion: reduce) {
 
     html {
-
         scroll-behavior: auto;
     }
-
 
     *,
     *::before,
     *::after {
-
         animation: none !important;
-
         transition: none !important;
     }
 
