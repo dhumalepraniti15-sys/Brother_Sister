@@ -1,1619 +1,1717 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>Brother & Sister ❤️</title>
-
-
-<style>
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <title>Brother & Sister ❤️</title>
 
 
-    body {
+    <style>
 
-        min-height: 100vh;
+        /* =====================================
+           RESET
+        ===================================== */
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        font-family: Arial, sans-serif;
-
-        background:
-            linear-gradient(
-                135deg,
-                #ffd6e7,
-                #d8e7ff,
-                #fff1d6
-            );
-
-        overflow: hidden;
-    }
-
-
-    /* =====================================
-       MAIN ALBUM / FIRST PAGE
-    ===================================== */
-
-    .album {
-
-        position: relative;
-
-        width: 90%;
-        max-width: 900px;
-
-        min-height: 85vh;
-
-        padding: 25px;
-
-        text-align: center;
-
-        background:
-            rgba(255,255,255,0.40);
-
-        backdrop-filter: blur(15px);
-
-        border-radius: 30px;
-
-        box-shadow:
-            0 20px 60px
-            rgba(0,0,0,0.25);
-
-        overflow: hidden;
-
-        display: flex;
-        flex-direction: column;
-
-        justify-content: space-between;
-    }
-
-
-    /* =====================================
-       WELCOME CONTENT
-    ===================================== */
-
-    .welcome-content {
-
-        position: relative;
-
-        z-index: 5;
-
-        margin-top: 55px;
-    }
-
-
-    .welcome-heart {
-
-        font-size: 75px;
-
-        animation:
-            welcomeHeart
-            1.5s
-            infinite;
-    }
-
-
-    @keyframes welcomeHeart {
-
-        0% {
-            transform: scale(1);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        50% {
-            transform: scale(1.15);
+
+        /* =====================================
+           BODY
+        ===================================== */
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd6e7,
+                    #d8e7ff,
+                    #fff1d6
+                );
+
+            overflow: hidden;
         }
 
-        100% {
-            transform: scale(1);
-        }
 
-    }
-
-
-    .welcome-content h1 {
-
-        color: #7b1e4b;
-
-        margin-top: 15px;
-        margin-bottom: 10px;
-
-        font-size: 42px;
-    }
-
-
-    .welcome-subtitle {
-
-        color: #555;
-
-        font-size: 20px;
-
-        margin-bottom: 25px;
-    }
-
-
-    .welcome-message {
-
-        max-width: 570px;
-
-        margin: auto;
-
-        color: #555;
-
-        font-size: 17px;
-
-        line-height: 1.8;
-    }
-
-
-    .small-hearts {
-
-        margin-top: 25px;
-
-        font-size: 22px;
-
-        letter-spacing: 8px;
-    }
-
-
-    /* =====================================
-       FLOWERS
-    ===================================== */
-
-    .flower {
-
-        position: absolute;
-
-        font-size: 38px;
-
-        opacity: 0.85;
-
-        z-index: 2;
-
-        pointer-events: none;
-
-        animation:
-            flowerFloat
-            5s
-            ease-in-out
-            infinite;
-    }
-
-
-    .flower1 {
-
-        top: 7%;
-        left: 7%;
-    }
-
-
-    .flower2 {
-
-        top: 13%;
-        right: 9%;
-
-        animation-delay: 1s;
-    }
-
-
-    .flower3 {
-
-        top: 43%;
-        left: 4%;
-
-        animation-delay: 2s;
-    }
-
-
-    .flower4 {
-
-        top: 48%;
-        right: 5%;
-
-        animation-delay: 0.5s;
-    }
-
-
-    .flower5 {
-
-        bottom: 20%;
-        left: 13%;
-
-        animation-delay: 1.5s;
-    }
-
-
-    .flower6 {
-
-        bottom: 17%;
-        right: 13%;
-
-        animation-delay: 2.5s;
-    }
-
-
-    @keyframes flowerFloat {
-
-        0% {
-
-            transform:
-                translateY(0)
-                rotate(0deg);
-
-        }
-
-        50% {
-
-            transform:
-                translateY(-15px)
-                rotate(10deg);
-
-        }
-
-        100% {
-
-            transform:
-                translateY(0)
-                rotate(0deg);
-
-        }
-
-    }
-
-
-    /* =====================================
-       START AREA
-       BUTTON AT BOTTOM
-    ===================================== */
-
-    .start-area {
-
-        position: relative;
-
-        z-index: 10;
-
-        margin-top: auto;
-
-        padding-bottom: 5px;
-    }
-
-
-    .start-area p {
-
-        color: #7b1e4b;
-
-        font-size: 15px;
-
-        margin-bottom: 12px;
-    }
-
-
-    .start-button {
-
-        padding: 15px 42px;
-
-        border: none;
-
-        border-radius: 35px;
-
-        background: #7b1e4b;
-
-        color: white;
-
-        font-size: 17px;
-
-        font-weight: bold;
-
-        cursor: pointer;
-
-        box-shadow:
-            0 8px 25px
-            rgba(123,30,75,0.35);
-
-        transition: 0.3s;
-    }
-
-
-    .start-button:hover {
-
-        transform:
-            translateY(-4px)
-            scale(1.05);
-
-        background: #a83268;
-
-        box-shadow:
-            0 12px 30px
-            rgba(123,30,75,0.45);
-    }
-
-
-    /* =====================================
-       ALBUM PHOTO CONTENT
-    ===================================== */
-
-    #albumContent {
-
-        width: 100%;
-    }
-
-
-    .photo-container {
-
-        height: 58vh;
-
-        display: flex;
-
-        justify-content: center;
-
-        align-items: center;
-    }
-
-
-    .photo-container img {
-
-        max-width: 90%;
-
-        max-height: 100%;
-
-        border: 8px solid white;
-
-        border-radius: 20px;
-
-        object-fit: cover;
-
-        box-shadow:
-            0 15px 40px
-            rgba(0,0,0,0.3);
-
-        animation:
-            photoAnimation
-            1s
-            ease;
-    }
-
-
-    @keyframes photoAnimation {
-
-        from {
-
-            opacity: 0;
-
-            transform:
-                scale(0.85)
-                rotate(-2deg);
-        }
-
-        to {
-
-            opacity: 1;
-
-            transform:
-                scale(1)
-                rotate(0deg);
-        }
-
-    }
-
-
-    /* =====================================
-       CAPTION
-    ===================================== */
-
-    .caption {
-
-        font-size: 22px;
-
-        font-weight: bold;
-
-        color: #7b1e4b;
-
-        margin-top: 10px;
-    }
-
-
-    .counter {
-
-        color: #555;
-
-        margin-top: 8px;
-
-        font-size: 14px;
-    }
-
-
-    /* =====================================
-       SURPRISE POPUP
-    ===================================== */
-
-    .popup-overlay {
-
-        position: fixed;
-
-        inset: 0;
-
-        background:
-            rgba(0,0,0,0.65);
-
-        display: none;
-
-        justify-content: center;
-
-        align-items: center;
-
-        z-index: 1000;
-
-        padding: 20px;
-    }
-
-
-    .popup-overlay.show {
-
-        display: flex;
-    }
-
-
-    .popup {
-
-        width: 90%;
-
-        max-width: 450px;
-
-        background: white;
-
-        padding: 35px 25px;
-
-        border-radius: 25px;
-
-        text-align: center;
-
-        box-shadow:
-            0 20px 60px
-            rgba(0,0,0,0.4);
-
-        animation:
-            popupAnimation
-            0.7s
-            ease;
-    }
-
-
-    @keyframes popupAnimation {
-
-        from {
-
-            transform:
-                scale(0.4);
-
-            opacity: 0;
-        }
-
-        to {
-
-            transform:
-                scale(1);
-
-            opacity: 1;
-        }
-
-    }
-
-
-    /* =====================================
-       GIFT
-    ===================================== */
-
-    .gift {
-
-        font-size: 70px;
-
-        animation:
-            giftAnimation
-            1s
-            infinite
-            alternate;
-    }
-
-
-    @keyframes giftAnimation {
-
-        from {
-
-            transform:
-                rotate(-8deg)
-                scale(1);
-        }
-
-        to {
-
-            transform:
-                rotate(8deg)
-                scale(1.1);
-        }
-
-    }
-
-
-    .popup h2 {
-
-        color: #7b1e4b;
-
-        margin: 15px 0;
-
-        font-size: 27px;
-    }
-
-
-    .popup p {
-
-        color: #555;
-
-        line-height: 1.7;
-
-        font-size: 16px;
-    }
-
-
-    /* =====================================
-       OK BUTTON
-    ===================================== */
-
-    .ok-button {
-
-        margin-top: 20px;
-
-        padding: 12px 35px;
-
-        border: none;
-
-        border-radius: 25px;
-
-        background: #7b1e4b;
-
-        color: white;
-
-        font-size: 16px;
-
-        cursor: pointer;
-
-        transition: 0.3s;
-    }
-
-
-    .ok-button:hover {
-
-        transform: scale(1.08);
-
-        background: #a83268;
-    }
-
-
-    /* =====================================
-       FINAL SURPRISE PAGE
-    ===================================== */
-
-    .surprise-page {
-
-        position: fixed;
-
-        inset: 0;
-
-        display: none;
-
-        justify-content: center;
-
-        align-items: center;
-
-        background:
-            linear-gradient(
-                135deg,
-                #ffb6d5,
-                #c9d8ff,
-                #ffe4b5
-            );
-
-        z-index: 2000;
-
-        padding: 20px;
-    }
-
-
-    .surprise-page.show {
-
-        display: flex;
-    }
-
-
-    /* =====================================
-       LETTER
-    ===================================== */
-
-    .letter {
-
-        width: 90%;
-
-        max-width: 650px;
-
-        background:
-            rgba(255,255,255,0.92);
-
-        padding: 40px 30px;
-
-        border-radius: 30px;
-
-        text-align: center;
-
-        box-shadow:
-            0 20px 70px
-            rgba(0,0,0,0.25);
-
-        animation:
-            letterAnimation
-            1s
-            ease;
-    }
-
-
-    @keyframes letterAnimation {
-
-        from {
-
-            transform:
-                translateY(100px);
-
-            opacity: 0;
-        }
-
-        to {
-
-            transform:
-                translateY(0);
-
-            opacity: 1;
-        }
-
-    }
-
-
-    .big-heart {
-
-        font-size: 75px;
-
-        margin-bottom: 15px;
-
-        animation:
-            heartBeat
-            1.2s
-            infinite;
-    }
-
-
-    @keyframes heartBeat {
-
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.15);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-
-    }
-
-
-    .letter h1 {
-
-        font-size: 35px;
-
-        color: #7b1e4b;
-
-        margin-bottom: 20px;
-    }
-
-
-    .letter p {
-
-        color: #444;
-
-        font-size: 18px;
-
-        line-height: 1.8;
-
-        margin-bottom: 15px;
-    }
-
-
-    .forever {
-
-        font-size: 25px;
-
-        font-weight: bold;
-
-        color: #7b1e4b;
-
-        margin-top: 20px;
-    }
-
-
-    /* =====================================
-       FLOATING HEARTS
-    ===================================== */
-
-    .heart {
-
-        position: fixed;
-
-        bottom: -50px;
-
-        font-size: 25px;
-
-        animation:
-            floatHeart
-            7s
-            linear
-            infinite;
-
-        opacity: 0.8;
-
-        z-index: 2100;
-
-        pointer-events: none;
-    }
-
-
-    @keyframes floatHeart {
-
-        0% {
-
-            transform:
-                translateY(0);
-
-            opacity: 0;
-        }
-
-        20% {
-
-            opacity: 1;
-        }
-
-        100% {
-
-            transform:
-                translateY(-110vh);
-
-            opacity: 0;
-        }
-
-    }
-
-
-    /* =====================================
-       MOBILE
-    ===================================== */
-
-    @media(max-width:600px) {
+        /* =====================================
+           MAIN ALBUM
+        ===================================== */
 
         .album {
 
-            width: 95%;
+            position: relative;
 
-            min-height: 90vh;
+            width: 90%;
+            max-width: 900px;
 
-            padding: 15px;
+            min-height: 85vh;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background:
+                rgba(255, 255, 255, 0.42);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0, 0, 0, 0.25);
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
         }
 
 
+        /* =====================================
+           WELCOME CONTENT
+        ===================================== */
+
         .welcome-content {
 
-            margin-top: 35px;
+            position: relative;
+
+            z-index: 5;
+
+            margin-top: 55px;
         }
 
 
         .welcome-heart {
 
-            font-size: 60px;
+            font-size: 75px;
+
+            animation:
+                welcomeHeart
+                1.5s
+                infinite;
+        }
+
+
+        @keyframes welcomeHeart {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
         }
 
 
         .welcome-content h1 {
 
-            font-size: 29px;
+            color: #7b1e4b;
+
+            margin-top: 15px;
+
+            margin-bottom: 10px;
+
+            font-size: 42px;
         }
 
 
         .welcome-subtitle {
 
-            font-size: 16px;
+            color: #555;
+
+            font-size: 20px;
+
+            margin-bottom: 25px;
         }
 
 
         .welcome-message {
 
-            font-size: 15px;
+            max-width: 570px;
 
-            padding: 0 10px;
+            margin: auto;
+
+            color: #555;
+
+            font-size: 17px;
+
+            line-height: 1.8;
         }
 
 
+        .small-hearts {
+
+            margin-top: 25px;
+
+            font-size: 22px;
+
+            letter-spacing: 8px;
+        }
+
+
+        /* =====================================
+           FLOWERS
+        ===================================== */
+
         .flower {
 
-            font-size: 28px;
+            position: absolute;
+
+            font-size: 38px;
+
+            opacity: 0.85;
+
+            z-index: 2;
+
+            pointer-events: none;
+
+            animation:
+                flowerFloat
+                5s
+                ease-in-out
+                infinite;
+        }
+
+
+        .flower1 {
+            top: 7%;
+            left: 7%;
+        }
+
+
+        .flower2 {
+            top: 13%;
+            right: 9%;
+            animation-delay: 1s;
+        }
+
+
+        .flower3 {
+            top: 43%;
+            left: 4%;
+            animation-delay: 2s;
+        }
+
+
+        .flower4 {
+            top: 48%;
+            right: 5%;
+            animation-delay: 0.5s;
+        }
+
+
+        .flower5 {
+            bottom: 20%;
+            left: 13%;
+            animation-delay: 1.5s;
+        }
+
+
+        .flower6 {
+            bottom: 17%;
+            right: 13%;
+            animation-delay: 2.5s;
+        }
+
+
+        @keyframes flowerFloat {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-15px)
+                    rotate(10deg);
+
+            }
+
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+        }
+
+
+        /* =====================================
+           START AREA
+        ===================================== */
+
+        .start-area {
+
+            position: relative;
+
+            z-index: 10;
+
+            margin-top: auto;
+
+            padding-bottom: 5px;
+        }
+
+
+        .start-area p {
+
+            color: #7b1e4b;
+
+            font-size: 15px;
+
+            margin-bottom: 12px;
         }
 
 
         .start-button {
 
-            padding: 14px 30px;
+            padding: 15px 42px;
 
-            font-size: 15px;
+            border: none;
+
+            border-radius: 35px;
+
+            background: #7b1e4b;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px
+                rgba(123, 30, 75, 0.35);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
+
+        .start-button:hover {
+
+            transform:
+                translateY(-4px)
+                scale(1.05);
+
+            background: #a83268;
+
+            box-shadow:
+                0 12px 30px
+                rgba(123, 30, 75, 0.45);
+        }
+
+
+        .start-button:active {
+
+            transform:
+                translateY(0)
+                scale(0.98);
+        }
+
+
+        /* =====================================
+           ALBUM CONTENT
+        ===================================== */
+
+        #albumContent {
+
+            width: 100%;
+        }
+
+
+        /* =====================================
+           PHOTO CONTAINER
+        ===================================== */
 
         .photo-container {
 
-            height: 52vh;
+            width: 100%;
+
+            height: 58vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 10px;
+
+            overflow: hidden;
         }
 
+
+        /* =====================================
+           PHOTO
+        ===================================== */
+
+        .photo-container img {
+
+            display: block;
+
+            width: auto;
+
+            height: auto;
+
+            max-width: 90%;
+
+            max-height: 100%;
+
+            object-fit: contain;
+
+            background: white;
+
+            padding: 8px;
+
+            border: 0;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 18px 45px
+                rgba(0, 0, 0, 0.28);
+
+            will-change:
+                transform,
+                opacity;
+
+            backface-visibility: hidden;
+
+            -webkit-backface-visibility: hidden;
+
+            transform:
+                translateZ(0);
+
+            animation:
+                photoAnimation
+                0.8s
+                ease;
+        }
+
+
+        /* =====================================
+           SMOOTH PHOTO ANIMATION
+        ===================================== */
+
+        @keyframes photoAnimation {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.94)
+                    translateY(8px);
+            }
+
+            60% {
+
+                opacity: 0.75;
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+
+        }
+
+
+        /* =====================================
+           CAPTION
+        ===================================== */
 
         .caption {
 
-            font-size: 18px;
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: #7b1e4b;
+
+            margin-top: 10px;
+
+            min-height: 28px;
+
+            animation:
+                captionAnimation
+                0.6s
+                ease;
         }
 
 
-        .letter {
+        @keyframes captionAnimation {
 
-            padding: 30px 20px;
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(8px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
         }
 
 
-        .letter h1 {
+        /* =====================================
+           COUNTER
+        ===================================== */
+
+        .counter {
+
+            color: #555;
+
+            margin-top: 8px;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================
+           POPUP OVERLAY
+        ===================================== */
+
+        .popup-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0, 0, 0, 0.65);
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 1000;
+
+            padding: 20px;
+        }
+
+
+        .popup-overlay.show {
+
+            display: flex;
+        }
+
+
+        /* =====================================
+           POPUP
+        ===================================== */
+
+        .popup {
+
+            width: 90%;
+
+            max-width: 450px;
+
+            background: white;
+
+            padding: 35px 25px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0, 0, 0, 0.4);
+
+            animation:
+                popupAnimation
+                0.7s
+                ease;
+        }
+
+
+        @keyframes popupAnimation {
+
+            from {
+
+                transform:
+                    scale(0.4);
+
+                opacity: 0;
+            }
+
+            to {
+
+                transform:
+                    scale(1);
+
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =====================================
+           GIFT
+        ===================================== */
+
+        .gift {
+
+            font-size: 70px;
+
+            animation:
+                giftAnimation
+                1s
+                infinite
+                alternate;
+        }
+
+
+        @keyframes giftAnimation {
+
+            from {
+
+                transform:
+                    rotate(-8deg)
+                    scale(1);
+            }
+
+            to {
+
+                transform:
+                    rotate(8deg)
+                    scale(1.1);
+            }
+
+        }
+
+
+        .popup h2 {
+
+            color: #7b1e4b;
+
+            margin: 15px 0;
 
             font-size: 27px;
         }
 
 
-        .letter p {
+        .popup p {
+
+            color: #555;
+
+            line-height: 1.7;
 
             font-size: 16px;
         }
 
-    }
 
-</style>
+        /* =====================================
+           OK BUTTON
+        ===================================== */
 
+        .ok-button {
+
+            margin-top: 20px;
+
+            padding: 12px 35px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #7b1e4b;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+
+        .ok-button:hover {
+
+            transform: scale(1.08);
+
+            background: #a83268;
+        }
+
+
+        /* =====================================
+           FINAL SURPRISE PAGE
+        ===================================== */
+
+        .surprise-page {
+
+            position: fixed;
+
+            inset: 0;
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffb6d5,
+                    #c9d8ff,
+                    #ffe4b5
+                );
+
+            z-index: 2000;
+
+            padding: 20px;
+
+            overflow-y: auto;
+        }
+
+
+        .surprise-page.show {
+
+            display: flex;
+        }
+
+
+        /* =====================================
+           LETTER
+        ===================================== */
+
+        .letter {
+
+            width: 90%;
+
+            max-width: 650px;
+
+            background:
+                rgba(255, 255, 255, 0.94);
+
+            padding: 40px 30px;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 20px 70px
+                rgba(0, 0, 0, 0.25);
+
+            animation:
+                letterAnimation
+                1s
+                ease;
+
+            position: relative;
+
+            z-index: 2200;
+        }
+
+
+        @keyframes letterAnimation {
+
+            from {
+
+                transform:
+                    translateY(100px);
+
+                opacity: 0;
+            }
+
+            to {
+
+                transform:
+                    translateY(0);
+
+                opacity: 1;
+            }
+
+        }
+
+
+        .big-heart {
+
+            font-size: 75px;
+
+            margin-bottom: 15px;
+
+            animation:
+                heartBeat
+                1.2s
+                infinite;
+        }
+
+
+        @keyframes heartBeat {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+
+        .letter h1 {
+
+            font-size: 35px;
+
+            color: #7b1e4b;
+
+            margin-bottom: 20px;
+        }
+
+
+        .letter p {
+
+            color: #444;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+
+        .forever {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            color: #7b1e4b;
+
+            margin-top: 20px;
+        }
+
+
+        /* =====================================
+           FLOATING HEARTS
+        ===================================== */
+
+        .heart {
+
+            position: fixed;
+
+            bottom: -50px;
+
+            font-size: 25px;
+
+            animation:
+                floatHeart
+                7s
+                linear
+                infinite;
+
+            opacity: 0.8;
+
+            z-index: 2100;
+
+            pointer-events: none;
+
+            will-change:
+                transform,
+                opacity;
+        }
+
+
+        @keyframes floatHeart {
+
+            0% {
+
+                transform:
+                    translateY(0);
+
+                opacity: 0;
+            }
+
+            20% {
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =====================================
+           IMAGE ERROR MESSAGE
+        ===================================== */
+
+        .image-error {
+
+            width: 80%;
+
+            max-width: 450px;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background: white;
+
+            color: #7b1e4b;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 600px) {
+
+            .album {
+
+                width: 95%;
+
+                min-height: 90vh;
+
+                padding: 15px;
+
+                border-radius: 24px;
+            }
+
+
+            .welcome-content {
+
+                margin-top: 35px;
+            }
+
+
+            .welcome-heart {
+
+                font-size: 60px;
+            }
+
+
+            .welcome-content h1 {
+
+                font-size: 29px;
+            }
+
+
+            .welcome-subtitle {
+
+                font-size: 16px;
+            }
+
+
+            .welcome-message {
+
+                font-size: 15px;
+
+                padding: 0 10px;
+            }
+
+
+            .flower {
+
+                font-size: 28px;
+            }
+
+
+            .start-button {
+
+                padding: 14px 30px;
+
+                font-size: 15px;
+            }
+
+
+            .photo-container {
+
+                height: 52vh;
+
+                padding: 5px;
+            }
+
+
+            .photo-container img {
+
+                max-width: 94%;
+
+                max-height: 100%;
+
+                padding: 5px;
+
+                border-radius: 18px;
+            }
+
+
+            .caption {
+
+                font-size: 18px;
+            }
+
+
+            .counter {
+
+                font-size: 13px;
+            }
+
+
+            .letter {
+
+                width: 94%;
+
+                padding: 30px 20px;
+
+                border-radius: 24px;
+            }
+
+
+            .big-heart {
+
+                font-size: 60px;
+            }
+
+
+            .letter h1 {
+
+                font-size: 27px;
+            }
+
+
+            .letter p {
+
+                font-size: 16px;
+
+                line-height: 1.7;
+            }
+
+
+            .forever {
+
+                font-size: 20px;
+            }
+
+        }
+
+
+        /* =====================================
+           SMALL MOBILE
+        ===================================== */
+
+        @media (max-width: 380px) {
+
+            .welcome-content h1 {
+
+                font-size: 25px;
+            }
+
+
+            .welcome-message {
+
+                font-size: 14px;
+            }
+
+
+            .photo-container {
+
+                height: 48vh;
+            }
+
+
+            .caption {
+
+                font-size: 17px;
+            }
+
+
+            .start-button {
+
+                padding:
+                    12px 24px;
+
+                font-size: 14px;
+            }
+
+        }
+
+
+        /* =====================================
+           REDUCE MOTION ACCESSIBILITY
+        ===================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                scroll-behavior:
+                    auto !important;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-<!-- =====================================
-     FIRST WELCOME PAGE
-====================================== -->
-
-<div class="album">
-
-
-    <!-- FLOWERS -->
-
-    <div class="flower flower1">
-        🌸
-    </div>
-
-    <div class="flower flower2">
-        🌷
-    </div>
-
-    <div class="flower flower3">
-        🌺
-    </div>
-
-    <div class="flower flower4">
-        🌼
-    </div>
-
-    <div class="flower flower5">
-        🌸
-    </div>
-
-    <div class="flower flower6">
-        🌷
-    </div>
-
-
-    <!-- WELCOME CONTENT -->
-
-    <div class="welcome-content">
-
-        <div class="welcome-heart">
-            ❤️
-        </div>
-
-
-        <h1>
-            Brother & Sister
-        </h1>
-
-
-        <p class="welcome-subtitle">
-            A Collection of Our Beautiful Memories ✨
-        </p>
-
-
-        <p class="welcome-message">
-
-            Some bonds are not just made by blood... ❤️
-
-            <br>
-
-            They are made by countless memories,
-            fights, laughs and love. 🥹
-
-        </p>
-
-
-        <div class="small-hearts">
-
-            💕 ✨ 💕 ✨ 💕
-
-        </div>
-
-    </div>
-
 
     <!-- =====================================
-         ALBUM CONTENT
-         HIDDEN AT FIRST
-    ====================================== -->
+         MAIN ALBUM
+    ===================================== -->
 
-    <div
-        id="albumContent"
-        style="display: none;"
-    >
+    <div class="album">
 
-        <div class="photo-container">
 
-            <img
-                id="albumPhoto"
-                src=""
-                alt="Brother Sister"
+        <!-- FLOWERS -->
+
+        <div class="flower flower1">
+            🌸
+        </div>
+
+        <div class="flower flower2">
+            🌷
+        </div>
+
+        <div class="flower flower3">
+            🌺
+        </div>
+
+        <div class="flower flower4">
+            🌼
+        </div>
+
+        <div class="flower flower5">
+            🌸
+        </div>
+
+        <div class="flower flower6">
+            🌷
+        </div>
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome-content">
+
+
+            <div class="welcome-heart">
+                ❤️
+            </div>
+
+
+            <h1>
+                Brother & Sister
+            </h1>
+
+
+            <p class="welcome-subtitle">
+
+                A Collection of Our
+                Beautiful Memories ✨
+
+            </p>
+
+
+            <p class="welcome-message">
+
+                Some bonds are not just made
+                by blood... ❤️
+
+                <br>
+
+                They are made by countless
+                memories, fights, laughs and love. 🥹
+
+            </p>
+
+
+            <div class="small-hearts">
+
+                💕 ✨ 💕 ✨ 💕
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================
+             ALBUM CONTENT
+        ===================================== -->
+
+        <div
+            id="albumContent"
+            style="display: none;"
+        >
+
+
+            <div class="photo-container">
+
+
+                <img
+                    id="albumPhoto"
+                    src=""
+                    alt="Brother Sister Memory"
+                    draggable="false"
+                >
+
+
+            </div>
+
+
+            <div
+                class="caption"
+                id="caption"
+            >
+            </div>
+
+
+            <div
+                class="counter"
+                id="counter"
+            >
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================
+             START AREA
+        ===================================== -->
+
+        <div class="start-area">
+
+
+            <p>
+
+                Ready to relive our memories? 🌸
+
+            </p>
+
+
+            <button
+                class="start-button"
+                id="startButton"
+                type="button"
+                onclick="startAlbum()"
             >
 
+                ▶ Start Our Memories
+
+            </button>
+
+
         </div>
 
-
-        <div
-            class="caption"
-            id="caption"
-        >
-        </div>
-
-
-        <div
-            class="counter"
-            id="counter"
-        >
-        </div>
 
     </div>
 
 
     <!-- =====================================
-         START BUTTON AT BOTTOM
-    ====================================== -->
+         BACKGROUND MUSIC
+    ===================================== -->
 
-    <div class="start-area">
+    <audio
+        id="backgroundMusic"
+        src="/songs/Bhai-Ni-Beni-Ladki.mp3"
+        preload="auto"
+    >
+    </audio>
 
-        <p>
-            Ready to relive our memories? 🌸
-        </p>
 
+    <!-- =====================================
+         SURPRISE POPUP
+    ===================================== -->
 
-        <button
-            class="start-button"
-            id="startButton"
-            onclick="startAlbum()"
-        >
+    <div
+        class="popup-overlay"
+        id="popupOverlay"
+    >
 
-            ▶ Start Our Memories
 
-        </button>
+        <div class="popup">
 
-    </div>
 
+            <div class="gift">
+                🎁
+            </div>
 
-</div>
 
+            <h2>
 
-<!-- =====================================
-     ONE SONG
-====================================== -->
+                One Last Surprise! ❤️
 
-<audio
-    id="backgroundMusic"
-    src="songs/vidssave.com Bhai Ni Beni Ladki 256KBPS.mp3"
-    preload="auto"
->
-</audio>
+            </h2>
 
 
-<!-- =====================================
-     SURPRISE POPUP
-====================================== -->
+            <p>
 
-<div
-    class="popup-overlay"
-    id="popupOverlay"
->
+                Our memories are not over yet...
 
-    <div class="popup">
+                <br><br>
 
+                I have something special
+                waiting for you. 🥹❤️
 
-        <div class="gift">
-            🎁
-        </div>
+            </p>
 
 
-        <h2>
-            One Last Surprise! ❤️
-        </h2>
+            <button
+                class="ok-button"
+                type="button"
+                onclick="openSurprise()"
+            >
 
+                OK ❤️
 
-        <p>
+            </button>
 
-            Our memories are not over yet...
-
-            <br><br>
-
-            I have something special
-            waiting for you. 🥹❤️
-
-        </p>
-
-
-        <button
-            class="ok-button"
-            onclick="openSurprise()"
-        >
-
-            OK ❤️
-
-        </button>
-
-
-    </div>
-
-</div>
-
-
-<!-- =====================================
-     FINAL SURPRISE
-====================================== -->
-
-<div
-    class="surprise-page"
-    id="surprisePage"
->
-
-    <div class="letter">
-
-
-        <div class="big-heart">
-            ❤️
-        </div>
-
-
-        <h1>
-            Brother & Sister Forever
-        </h1>
-
-
-        <p>
-
-            Life will change,
-            people will come and go,
-            and we will grow older...
-
-        </p>
-
-
-        <p>
-
-            But one thing will always remain
-            the same —
-
-            <br>
-
-            <b>
-                Our Bond. ❤️
-            </b>
-
-        </p>
-
-
-        <p>
-
-            Thank you for all the fights,
-            laughs, crazy memories,
-            secrets and unforgettable moments.
-
-        </p>
-
-
-        <p>
-
-            No matter how far we go,
-
-            <br>
-
-            you will always have
-            a special place in my heart.
-
-        </p>
-
-
-        <div class="forever">
-
-            🫶 You & Me — Forever 🫶
 
         </div>
 
 
     </div>
 
-</div>
 
+    <!-- =====================================
+         FINAL SURPRISE
+    ===================================== -->
 
-<!-- =====================================
-     JAVASCRIPT
-====================================== -->
+    <div
+        class="surprise-page"
+        id="surprisePage"
+    >
 
-<script>
 
+        <div class="letter">
 
-    /* =====================================
-       PHOTOS
-    ===================================== */
 
-    const photos = [
+            <div class="big-heart">
 
-        "photos/photo1.jpg",
+                ❤️
 
-        "photos/photo2.jpg",
+            </div>
 
-        "photos/photo3.jpg",
 
-        "photos/photo4.jpg",
+            <h1>
 
-        "photos/photo5.jpg",
+                Brother & Sister Forever
 
-        "photos/photo6.jpg"
+            </h1>
 
-    ];
 
+            <p>
 
-    /* =====================================
-       CAPTIONS
-    ===================================== */
+                Life will change,
+                people will come and go,
+                and we will grow older...
 
-    const captions = [
+            </p>
 
-        "Partners in Crime 😎❤️",
 
-        "Childhood Memories 🥹❤️",
+            <p>
 
-        "Always Together 🤝❤️",
+                But one thing will always
+                remain the same —
 
-        "Crazy Moments 😂❤️",
+                <br>
 
-        "Our Beautiful Memories ✨",
+                <b>
 
-        "Brother & Sister Forever ♾️❤️"
+                    Our Bond. ❤️
 
-    ];
+                </b>
 
+            </p>
 
-    /* =====================================
-       VARIABLES
-    ===================================== */
 
-    let currentPhoto = 0;
+            <p>
 
-    let albumStarted = false;
+                Thank you for all the fights,
+                laughs, crazy memories,
+                secrets and unforgettable moments.
 
-    let photoTimer = null;
+            </p>
 
 
-    /* =====================================
-       ELEMENTS
-    ===================================== */
+            <p>
 
-    const photo =
-        document.getElementById(
-            "albumPhoto"
-        );
+                No matter how far we go,
 
+                <br>
 
-    const caption =
-        document.getElementById(
-            "caption"
-        );
+                you will always have
+                a special place in my heart.
 
+            </p>
 
-    const counter =
-        document.getElementById(
-            "counter"
-        );
 
+            <div class="forever">
 
-    const music =
-        document.getElementById(
-            "backgroundMusic"
-        );
+                🫶 You & Me — Forever 🫶
 
+            </div>
 
-    const startButton =
-        document.getElementById(
-            "startButton"
-        );
 
+        </div>
 
-    const albumContent =
-        document.getElementById(
-            "albumContent"
-        );
 
+    </div>
 
-    const popupOverlay =
-        document.getElementById(
-            "popupOverlay"
-        );
 
+    <!-- =====================================
+         JAVASCRIPT
+    ===================================== -->
 
-    const surprisePage =
-        document.getElementById(
-            "surprisePage"
-        );
+    <script>
 
 
-    /* =====================================
-       START ALBUM
-    ===================================== */
+        /* =====================================
+           PHOTOS
+           
+           IMPORTANT:
+           Use exact lowercase filenames.
+        ===================================== */
 
-    function startAlbum() {
+        const photos = [
 
+            "/photos/photo1.jpg",
 
-        /* Prevent double click */
+            "/photos/photo2.jpg",
 
-        if (albumStarted) {
+            "/photos/photo3.jpg",
 
-            return;
+            "/photos/photo4.jpg",
 
-        }
+            "/photos/photo5.jpg",
 
-
-        albumStarted = true;
-
-
-        /* Hide Start button */
-
-        startButton.style.display =
-            "none";
-
-
-        /* Hide welcome content */
-
-        document.querySelector(
-            ".welcome-content"
-        ).style.display =
-            "none";
-
-
-        /* Hide flowers */
-
-        document.querySelectorAll(
-            ".flower"
-        ).forEach(function(flower) {
-
-            flower.style.display =
-                "none";
-
-        });
-
-
-        /* Show album */
-
-        albumContent.style.display =
-            "block";
-
-
-        /* First photo */
-
-        currentPhoto = 0;
-
-
-        photo.src =
-            photos[currentPhoto];
-
-
-        caption.innerHTML =
-            captions[currentPhoto];
-
-
-        counter.innerHTML =
-            "1 / " +
-            photos.length;
-
-
-        /* Start song */
-
-        music.currentTime = 0;
-
-
-        music.play().catch(
-            function(error) {
-
-                console.log(
-                    "Music needs user interaction."
-                );
-
-            }
-        );
-
-
-        /* Change photo every 5 seconds */
-
-        photoTimer =
-            setInterval(
-                changePhoto,
-                5000
-            );
-
-    }
-
-
-    /* =====================================
-       CHANGE PHOTO
-    ===================================== */
-
-    function changePhoto() {
-
-
-        currentPhoto++;
-
-
-        /* All photos finished */
-
-        if (
-            currentPhoto >=
-            photos.length
-        ) {
-
-            finishAlbum();
-
-            return;
-
-        }
-
-
-        /* New photo */
-
-        photo.src =
-            photos[currentPhoto];
-
-
-        /* New caption */
-
-        caption.innerHTML =
-            captions[currentPhoto];
-
-
-        /* Counter */
-
-        counter.innerHTML =
-            (currentPhoto + 1)
-            +
-            " / "
-            +
-            photos.length;
-
-
-        /* Restart animation */
-
-        photo.style.animation =
-            "none";
-
-        photo.offsetHeight;
-
-        photo.style.animation =
-            "photoAnimation 1s ease";
-
-    }
-
-
-    /* =====================================
-       FINISH ALBUM
-    ===================================== */
-
-    function finishAlbum() {
-
-
-        /* Stop slideshow */
-
-        clearInterval(
-            photoTimer
-        );
-
-
-        /* Hide photos */
-
-        albumContent.style.display =
-            "none";
-
-
-        /*
-            IMPORTANT:
-            MUSIC IS NOT STOPPED.
-        */
-
-
-        /* Show popup */
-
-        setTimeout(function() {
-
-            popupOverlay.classList.add(
-                "show"
-            );
-
-        }, 800);
-
-    }
-
-
-    /* =====================================
-       FINAL SURPRISE
-    ===================================== */
-
-    function openSurprise() {
-
-
-        /* Close popup */
-
-        popupOverlay.classList.remove(
-            "show"
-        );
-
-
-        /* Show surprise */
-
-        setTimeout(function() {
-
-            surprisePage.classList.add(
-                "show"
-            );
-
-
-            createHearts();
-
-        }, 500);
-
-    }
-
-
-    /* =====================================
-       FLOATING HEARTS
-    ===================================== */
-
-    function createHearts() {
-
-
-        const hearts = [
-
-            "❤️",
-            "💕",
-            "💖",
-            "💗",
-            "💓",
-            "🫶",
-            "💞"
+            "/photos/photo6.jpg"
 
         ];
 
 
-        for (
-            let i = 0;
-            i < 35;
-            i++
-        ) {
+        /* =====================================
+           CAPTIONS
+        ===================================== */
+
+        const captions = [
+
+            "Partners in Crime 😎❤️",
+
+            "Childhood Memories 🥹❤️",
+
+            "Always Together 🤝❤️",
+
+            "Crazy Moments 😂❤️",
+
+            "Our Beautiful Memories ✨",
+
+            "Brother & Sister Forever ♾️❤️"
+
+        ];
 
 
-            const heart =
-                document.createElement(
-                    "div"
-                );
+        /* =====================================
+           VARIABLES
+        ===================================== */
+
+        let currentPhoto = 0;
+
+        let albumStarted = false;
+
+        let photoTimer = null;
 
 
-            heart.className =
-                "heart";
+        /* =====================================
+           ELEMENTS
+        ===================================== */
 
-
-            heart.innerHTML =
-                hearts[
-                    Math.floor(
-                        Math.random()
-                        *
-                        hearts.length
-                    )
-                ];
-
-
-            heart.style.left =
-                Math.random()
-                * 100
-                +
-                "%";
-
-
-            heart.style.animationDuration =
-
-                (
-                    4
-                    +
-                    Math.random() * 5
-                )
-                +
-                "s";
-
-
-            heart.style.animationDelay =
-
-                Math.random() * 3
-                +
-                "s";
-
-
-            document.body.appendChild(
-                heart
+        const photo =
+            document.getElementById(
+                "albumPhoto"
             );
 
 
-            setTimeout(function() {
+        const caption =
+            document.getElementById(
+                "caption"
+            );
 
-                heart.remove();
 
-            }, 10000);
+        const counter =
+            document.getElementById(
+                "counter"
+            );
+
+
+        const music =
+            document.getElementById(
+                "backgroundMusic"
+            );
+
+
+        const startButton =
+            document.getElementById(
+                "startButton"
+            );
+
+
+        const albumContent =
+            document.getElementById(
+                "albumContent"
+            );
+
+
+        const popupOverlay =
+            document.getElementById(
+                "popupOverlay"
+            );
+
+
+        const surprisePage =
+            document.getElementById(
+                "surprisePage"
+            );
+
+
+        /* =====================================
+           PRELOAD ALL IMAGES
+           
+           This helps prevent waiting when
+           the slideshow changes images.
+        ===================================== */
+
+        photos.forEach(function(imagePath) {
+
+            const img =
+                new Image();
+
+            img.src =
+                imagePath;
+
+        });
+
+
+        /* =====================================
+           SHOW PHOTO
+        ===================================== */
+
+        function showPhoto(index) {
+
+
+            if (!photos[index]) {
+
+                return;
+
+            }
+
+
+            /* Restart CSS animation */
+
+            photo.style.animation =
+                "none";
+
+
+            void photo.offsetWidth;
+
+
+            /* Set image */
+
+            photo.src =
+                photos[index];
+
+
+            /* Set alt text */
+
+            photo.alt =
+                captions[index]
+                || "Brother Sister Memory";
+
+
+            /* Set caption */
+
+            caption.textContent =
+                captions[index];
+
+
+            /* Set counter */
+
+            counter.textContent =
+                (index + 1)
+                + " / "
+                + photos.length;
+
+
+            /* Start smooth animation */
+
+            photo.style.animation =
+                "photoAnimation 0.8s ease";
+
+
+            /* Image error handler */
+
+            photo.onerror =
+                function() {
+
+                    console.error(
+                        "Image could not load:",
+                        photos[index]
+                    );
+
+                };
 
         }
 
-    }
+
+        /* =====================================
+           START ALBUM
+        ===================================== */
+
+        function startAlbum() {
 
 
-    /* =====================================
-       SONG LOOP
-    ===================================== */
+            /* Prevent double click */
 
-    music.addEventListener(
-        "ended",
-        function() {
+            if (albumStarted) {
 
+                return;
+
+            }
+
+
+            albumStarted = true;
+
+
+            /* Hide button */
+
+            startButton.style.display =
+                "none";
+
+
+            /* Hide welcome */
+
+            document.querySelector(
+                ".welcome-content"
+            ).style.display =
+                "none";
+
+
+            /* Hide flowers */
+
+            document.querySelectorAll(
+                ".flower"
+            ).forEach(
+                function(flower) {
+
+                    flower.style.display =
+                        "none";
+
+                }
+            );
+
+
+            /* Show album */
+
+            albumContent.style.display =
+                "block";
+
+
+            /* First photo */
+
+            currentPhoto = 0;
+
+
+            showPhoto(
+                currentPhoto
+            );
+
+
+            /* =================================
+               START MUSIC
+            ================================= */
 
             music.currentTime = 0;
 
@@ -1622,19 +1720,277 @@
                 function(error) {
 
                     console.log(
-                        "Music restart blocked."
+                        "Music playback was blocked:",
+                        error
                     );
 
                 }
             );
 
+
+            /* =================================
+               START SLIDESHOW
+               
+               3 seconds per image
+            ================================= */
+
+            photoTimer =
+                setTimeout(
+                    changePhoto,
+                    3000
+                );
+
         }
-    );
 
 
-</script>
+        /* =====================================
+           CHANGE PHOTO
+        ===================================== */
+
+        function changePhoto() {
+
+
+            currentPhoto++;
+
+
+            /* =================================
+               ALL PHOTOS FINISHED
+            ================================= */
+
+            if (
+                currentPhoto >=
+                photos.length
+            ) {
+
+                finishAlbum();
+
+                return;
+
+            }
+
+
+            /* =================================
+               SHOW NEXT PHOTO
+            ================================= */
+
+            showPhoto(
+                currentPhoto
+            );
+
+
+            /* =================================
+               SCHEDULE NEXT PHOTO
+               
+               3 seconds
+            ================================= */
+
+            photoTimer =
+                setTimeout(
+                    changePhoto,
+                    3000
+                );
+
+        }
+
+
+        /* =====================================
+           FINISH ALBUM
+        ===================================== */
+
+        function finishAlbum() {
+
+
+            /* Stop slideshow */
+
+            clearTimeout(
+                photoTimer
+            );
+
+
+            /* Hide album */
+
+            albumContent.style.display =
+                "none";
+
+
+            /*
+                IMPORTANT:
+                Music is intentionally
+                NOT stopped.
+            */
+
+
+            /* Show popup */
+
+            setTimeout(
+                function() {
+
+                    popupOverlay.classList.add(
+                        "show"
+                    );
+
+                },
+                800
+            );
+
+        }
+
+
+        /* =====================================
+           OPEN FINAL SURPRISE
+        ===================================== */
+
+        function openSurprise() {
+
+
+            /* Close popup */
+
+            popupOverlay.classList.remove(
+                "show"
+            );
+
+
+            /* Show final page */
+
+            setTimeout(
+                function() {
+
+                    surprisePage.classList.add(
+                        "show"
+                    );
+
+
+                    createHearts();
+
+                },
+                500
+            );
+
+        }
+
+
+        /* =====================================
+           FLOATING HEARTS
+        ===================================== */
+
+        function createHearts() {
+
+
+            const hearts = [
+
+                "❤️",
+                "💕",
+                "💖",
+                "💗",
+                "💓",
+                "🫶",
+                "💞"
+
+            ];
+
+
+            for (
+                let i = 0;
+                i < 35;
+                i++
+            ) {
+
+
+                const heart =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                heart.className =
+                    "heart";
+
+
+                heart.textContent =
+                    hearts[
+                        Math.floor(
+                            Math.random()
+                            *
+                            hearts.length
+                        )
+                    ];
+
+
+                heart.style.left =
+                    Math.random()
+                    * 100
+                    + "%";
+
+
+                heart.style.animationDuration =
+
+                    (
+                        4
+                        +
+                        Math.random() * 5
+                    )
+                    +
+                    "s";
+
+
+                heart.style.animationDelay =
+
+                    Math.random() * 3
+                    +
+                    "s";
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(
+                    function() {
+
+                        heart.remove();
+
+                    },
+                    10000
+                );
+
+            }
+
+        }
+
+
+        /* =====================================
+           SONG LOOP
+        ===================================== */
+
+        music.addEventListener(
+            "ended",
+            function() {
+
+
+                music.currentTime =
+                    0;
+
+
+                music.play().catch(
+                    function(error) {
+
+                        console.log(
+                            "Music restart blocked:",
+                            error
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    </script>
 
 
 </body>
 
 </html>
+
