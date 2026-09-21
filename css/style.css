@@ -1,0 +1,828 @@
+css
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #dce8ff,
+            #fff0d5
+        );
+}
+
+
+/* ==========================================================
+   COMMON
+========================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+.screen {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* ==========================================================
+   WELCOME SCREEN
+========================================================== */
+
+#welcomeScreen {
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.welcome-card {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(92vw, 700px);
+
+    padding:
+        clamp(25px, 5vw, 50px);
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+.heart-icon {
+    font-size:
+        clamp(55px, 10vw, 85px);
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+.welcome-card h1 {
+    color: #7b1e4b;
+
+    font-size:
+        clamp(30px, 6vw, 50px);
+
+    margin-bottom: 10px;
+}
+
+
+.welcome-card h2 {
+    color: #a83268;
+
+    font-size:
+        clamp(18px, 3vw, 25px);
+
+    margin-bottom: 25px;
+}
+
+
+.welcome-card p {
+    color: #555;
+
+    font-size:
+        clamp(14px, 2.5vw, 18px);
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+.mini-hearts {
+    font-size: 22px;
+
+    margin: 15px 0;
+}
+
+
+.continue-message {
+    color: #7b1e4b !important;
+
+    font-size: 14px !important;
+
+    margin-top: 20px;
+}
+
+
+.main-button {
+    border: none;
+
+    padding: 14px 35px;
+
+    border-radius: 30px;
+
+    background: #7b1e4b;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+
+    box-shadow:
+        0 8px 25px
+        rgba(123, 30, 75, 0.3);
+}
+
+
+.main-button:hover {
+    transform: translateY(-3px);
+
+    background: #a83268;
+}
+
+
+.main-button:active {
+    transform: scale(0.96);
+}
+
+
+/* ==========================================================
+   FLOWERS
+========================================================== */
+
+.decor {
+    position: absolute;
+
+    z-index: 1;
+
+    font-size:
+        clamp(28px, 6vw, 50px);
+
+    pointer-events: none;
+
+    animation: floatDecoration 5s ease-in-out infinite;
+}
+
+
+.flower-one {
+    top: 8%;
+    left: 7%;
+}
+
+
+.flower-two {
+    top: 12%;
+    right: 7%;
+
+    animation-delay: 1s;
+}
+
+
+.flower-three {
+    bottom: 12%;
+    left: 8%;
+
+    animation-delay: 2s;
+}
+
+
+.flower-four {
+    bottom: 10%;
+    right: 8%;
+
+    animation-delay: 3s;
+}
+
+
+/* ==========================================================
+   ALBUM SCREEN
+========================================================== */
+
+#albumScreen {
+    padding: 15px;
+}
+
+
+.album-card {
+    width: min(94vw, 1000px);
+
+    height: min(92vh, 850px);
+    height: min(92dvh, 850px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================================
+   PHOTO WRAPPER
+========================================================== */
+
+.photo-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    height:
+        min(70vh, 620px);
+
+    height:
+        min(70dvh, 620px);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+.photo-wrapper img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 0, 0, 0.3);
+
+    user-select: none;
+
+    opacity: 1;
+
+    transition:
+        opacity 0.35s ease;
+}
+
+
+.photo-wrapper img.fade-out {
+    opacity: 0;
+}
+
+
+/* ==========================================================
+   IMAGE LOADER
+========================================================== */
+
+.image-loader {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: #7b1e4b;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    border-radius: 18px;
+
+    z-index: 2;
+}
+
+
+.image-loader.hide {
+    display: none;
+}
+
+
+/* ==========================================================
+   CAPTION
+========================================================== */
+
+.photo-caption {
+    margin-top: 15px;
+
+    color: #7b1e4b;
+
+    text-align: center;
+
+    font-size:
+        clamp(18px, 3vw, 26px);
+}
+
+
+.photo-counter {
+    margin-top: 6px;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================================
+   PROGRESS BAR
+========================================================== */
+
+.progress-container {
+    width: min(90%, 600px);
+
+    height: 5px;
+
+    margin-top: 15px;
+
+    background:
+        rgba(123, 30, 75, 0.15);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    background: #7b1e4b;
+
+    transition:
+        width 0.2s linear;
+}
+
+
+/* ==========================================================
+   POPUP
+========================================================== */
+
+.popup-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+}
+
+
+.popup-card {
+    width: min(92vw, 480px);
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 70px
+        rgba(0, 0, 0, 0.4);
+
+    animation:
+        popupIn 0.5s ease;
+}
+
+
+.gift {
+    font-size: 70px;
+}
+
+
+.popup-card h2 {
+    color: #7b1e4b;
+
+    margin: 15px 0;
+}
+
+
+.popup-card p {
+    color: #555;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================================
+   FINAL SCREEN
+========================================================== */
+
+.final-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb6d5,
+            #c9d8ff,
+            #ffe4b5
+        );
+}
+
+
+.final-card {
+    width: min(92vw, 680px);
+
+    padding:
+        clamp(25px, 5vw, 50px);
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 70px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+.big-heart {
+    font-size:
+        clamp(60px, 12vw, 90px);
+
+    animation: heartbeat 1.3s infinite;
+}
+
+
+.final-card h1 {
+    color: #7b1e4b;
+
+    font-size:
+        clamp(26px, 6vw, 42px);
+
+    margin: 15px 0 25px;
+}
+
+
+.final-card p {
+    color: #444;
+
+    font-size:
+        clamp(15px, 2.8vw, 19px);
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+.forever-text {
+    margin-top: 25px;
+
+    color: #7b1e4b;
+
+    font-size:
+        clamp(19px, 4vw, 28px);
+
+    font-weight: bold;
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes floatDecoration {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(8deg);
+    }
+
+}
+
+
+@keyframes popupIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding: 12px;
+    }
+
+
+    .welcome-card {
+        width: 96vw;
+
+        padding: 25px 18px;
+
+        border-radius: 22px;
+    }
+
+
+    .welcome-card p {
+        line-height: 1.65;
+    }
+
+
+    .album-card {
+        width: 97vw;
+
+        height: 94dvh;
+
+        padding: 12px;
+
+        border-radius: 20px;
+    }
+
+
+    .photo-wrapper {
+        height: 68dvh;
+    }
+
+
+    .photo-wrapper img {
+        max-width: 96%;
+
+        border-radius: 14px;
+    }
+
+
+    .photo-caption {
+        margin-top: 10px;
+
+        font-size: 17px;
+    }
+
+
+    .progress-container {
+        width: 90%;
+    }
+
+
+    .decor {
+        font-size: 25px;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+
+    .welcome-card {
+        padding: 20px 14px;
+    }
+
+
+    .welcome-card h1 {
+        font-size: 27px;
+    }
+
+
+    .welcome-card h2 {
+        font-size: 17px;
+    }
+
+
+    .welcome-card p {
+        font-size: 13px;
+    }
+
+
+    .main-button {
+        padding: 12px 27px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* ==========================================================
+   LANDSCAPE MOBILE
+========================================================== */
+
+@media (
+    max-height: 550px
+) and (
+    orientation: landscape
+) {
+
+    .album-card {
+        height: 94dvh;
+
+        padding: 8px;
+    }
+
+
+    .photo-wrapper {
+        height: 62dvh;
+    }
+
+
+    .photo-caption {
+        margin-top: 5px;
+
+        font-size: 15px;
+    }
+
+
+    .photo-counter {
+        margin-top: 2px;
+    }
+
+
+    .progress-container {
+        margin-top: 5px;
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (
+    min-width: 601px
+) and (
+    max-width: 1024px
+) {
+
+    .photo-wrapper {
+        height: 68dvh;
+    }
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
